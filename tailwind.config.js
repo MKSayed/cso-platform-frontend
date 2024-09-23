@@ -49,7 +49,7 @@ module.exports = {
         },
       },
       fontFamily: {
-        'readex' : ['readex']
+        readex: ['readex'],
       },
       borderRadius: {
         lg: 'var(--radius)',

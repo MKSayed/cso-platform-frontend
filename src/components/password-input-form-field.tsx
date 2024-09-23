@@ -2,9 +2,9 @@ import { FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessa
 import { Input } from '@/components/ui/input'
 import { cn } from '@/lib/utils.ts'
 import { Control, FieldValues, FormState } from 'react-hook-form'
-import { ReactNode, useState } from 'react';
-import { Button } from '@/components/ui/button.tsx';
-import { EyeIcon, EyeOffIcon } from 'lucide-react';
+import { ReactNode, useState } from 'react'
+import { Button } from '@/components/ui/button.tsx'
+import { EyeIcon, EyeOffIcon } from 'lucide-react'
 
 type Props = {
   form: {
@@ -61,23 +61,28 @@ export function PasswordInputFormField({
             <FormLabel className={labelClassName}>{formLabel}</FormLabel>
             <FormControl>
               <div className='relative w-full'>
-              <Input placeholder={placeholder} type={showPassword ? 'text': 'password'} className={cn('pl-12', className)} {...field}  />
+                <Input
+                  placeholder={placeholder}
+                  type={showPassword ? 'text' : 'password'}
+                  className={cn('pl-12', className)}
+                  {...field}
+                />
                 <Button
-                type="button"
-                variant="ghost"
-                size="sm"
-                className="absolute left-0 top-0 h-full px-3 py-2 hover:bg-transparent"
-                onClick={() => setShowPassword((prev) => !prev)}
-                disabled={disabled}
-              >
-                {showPassword && !disabled ? (
-                  <EyeIcon className="size-5" aria-hidden="true" />
-                ) : (
-                  <EyeOffIcon className="size-5" aria-hidden="true" />
-                )}
-              </Button>
-              {/* hides browser's password toggle icon */}
-              <style>{`
+                  type='button'
+                  variant='ghost'
+                  size='sm'
+                  className='absolute left-0 top-0 h-full px-3 py-2 hover:bg-transparent'
+                  onClick={() => setShowPassword((prev) => !prev)}
+                  disabled={disabled}
+                >
+                  {showPassword && !disabled ? (
+                    <EyeIcon className='size-5' aria-hidden='true' />
+                  ) : (
+                    <EyeOffIcon className='size-5' aria-hidden='true' />
+                  )}
+                </Button>
+                {/* hides browser's password toggle icon */}
+                <style>{`
 					.hide-password-toggle::-ms-reveal,
 					.hide-password-toggle::-ms-clear {
 						visibility: hidden;
@@ -85,8 +90,7 @@ export function PasswordInputFormField({
 						display: none;
 					}
 				`}</style>
-
-                </div>
+              </div>
             </FormControl>
             {description && <FormDescription>{description}</FormDescription>}
             <FormMessage />

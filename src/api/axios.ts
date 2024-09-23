@@ -11,7 +11,7 @@ const API_URL = 'http://localhost:8005/'
 // }
 
 export const axiosInstance = Axios.create({
-  baseURL: API_URL
+  baseURL: API_URL,
 })
 
 axiosInstance.defaults.timeout = 10000
@@ -30,5 +30,5 @@ axiosInstance.interceptors.response.use(
       console.log('Connection timed out')
     }
     return Promise.reject(error)
-  }
+  },
 )

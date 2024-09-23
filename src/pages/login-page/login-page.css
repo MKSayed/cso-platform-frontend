@@ -1,20 +1,22 @@
 /* Refer to this link for explanation of the box border https://stackoverflow.com/questions/5706963/possible-to-use-border-radius-together-with-a-border-image-which-has-a-gradient */
 .box::before {
-  content: "";
+  content: '';
   position: absolute;
   inset: 0;
   border-radius: 20px; /* controls the border roundness */
   padding: 4px; /* controls the border thickness */
-  background: linear-gradient(30deg, hsl(55deg 100% 60%) 26%,
-hsl(56deg 100% 100%) 30%,
-hsl(55deg 100% 100%) 40%,
-hsl(55deg 100% 100%) 67%,
-hsl(55deg 100% 55%) 89%,
-hsl(55deg 100% 50%) 100%
-);
+  background: linear-gradient(
+    30deg,
+    hsl(55deg 100% 60%) 26%,
+    hsl(56deg 100% 100%) 30%,
+    hsl(55deg 100% 100%) 40%,
+    hsl(55deg 100% 100%) 67%,
+    hsl(55deg 100% 55%) 89%,
+    hsl(55deg 100% 50%) 100%
+  );
   -webkit-mask:
     linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
-          mask-composite: exclude;
+  mask-composite: exclude;
 }
