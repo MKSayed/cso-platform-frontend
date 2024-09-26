@@ -12,10 +12,10 @@ export default function Layout() {
       <main
         className={cn(
           'min-h-[calc(100vh_-_56px)] bg-zinc-50 transition-[margin-left] duration-300 ease-in-out',
-          !sidebar?.isOpen? 'mr-[90px]' : 'mr-72',
+          !sidebar?.isOpen ? 'mr-[90px]' : 'mr-72',
         )}
       >
-      <Outlet/>
+        <Outlet />
       </main>
     </div>
   )
