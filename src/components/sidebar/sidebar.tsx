@@ -8,6 +8,7 @@ import { ScrollArea } from '@/components/ui/scroll-area.tsx'
 import { SidebarItem } from '@/components/sidebar/sidebar-item.tsx'
 import { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider } from '@/components/ui/tooltip'
 import { LogOut } from 'lucide-react'
+import { Separator } from '@/components/ui/separator.tsx'
 
 export function Sidebar() {
   const sidebar = useSidebarStore()
@@ -50,16 +51,19 @@ export function Sidebar() {
             </h1>
           </div>
         </Button>
+        <Separator className={'mt-3 bg-[#2C2B68]'} orientation='horizontal' />
         {/*End of Logo and brand*/}
 
         {/* Navigation items within the sidebar */}
         <ScrollArea className='[&>div>div[style]]:!block'>
           <nav className='mt-8 h-full w-full'>
-            <ul className='flex min-h-[calc(100vh-32px-40px-32px)] flex-col items-end space-y-1 px-2'>
+            <ul className='flex min-h-[calc(100vh-32px-40px-32px-14px)] flex-col items-end space-y-1 px-2'>
               {sidebarItems.map((item, index) => (
                 <SidebarItem isOpen={isOpen} data={item} key={index} />
               ))}
-              {/*Signout button*/}
+              <Separator className={'mt-3 bg-[#2C2B68]'} orientation='horizontal' />
+
+              {/*Sign out button*/}
               <li className='flex w-full grow items-end'>
                 <TooltipProvider disableHoverableContent>
                   <Tooltip delayDuration={100}>
