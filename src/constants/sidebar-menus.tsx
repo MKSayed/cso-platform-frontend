@@ -64,7 +64,7 @@ export const homeSidebarMenu: sidebarItem[] = [
 
 // Define a TypeScript type for possible menu keys
 // Extend this type with additional keys as needed for other menus
-type menuKey = 'home'
+export type menuKey = 'main'
 
 // Function to retrieve the appropriate sidebar menu based on the current pathname and menu key
 export function getSidebarMenu({
@@ -78,7 +78,7 @@ export function getSidebarMenu({
 
   // Determine which menu to return based on the `menuKey`
   switch (menuKey) {
-    case 'home':
+    case 'main':
       // Map through the `homeSidebarMenu` items to set the `active` property
       activatedSidebarMenu = homeSidebarMenu.map((menuItem) => ({
         ...menuItem, // Spread the existing properties of the menu item
