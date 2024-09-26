@@ -18,15 +18,18 @@ export function SidebarItem({ isOpen, data }: props) {
           <Tooltip delayDuration={100}>
             <TooltipTrigger asChild>
               <Button
-                variant={data.active ? 'secondary' : 'ghost'}
-                className='mb-1 h-10 w-full justify-start hover:bg-blue-600/70'
+                variant='ghost'
+                className={cn(
+                  'mb-1 h-10 w-full justify-start rounded-full hover:bg-blue-600/70',
+                  data.active ? 'bg-white/10' : '',
+                )}
                 asChild
               >
                 <Link to={data.to}>
                   <p
                     className={cn(
                       'max-w-[200px] truncate text-sm font-normal text-white',
-                      !isOpen ? 'w-[20px] opacity-0' : '',
+                      !isOpen ? 'hidden opacity-0' : '',
                     )}
                   >
                     {data.label}
@@ -38,7 +41,7 @@ export function SidebarItem({ isOpen, data }: props) {
               </Button>
             </TooltipTrigger>
             {!isOpen && (
-              <TooltipContent className={'bg-blue-900'} side='left'>
+              <TooltipContent className={'-translate-x-[20px] bg-blue-900'} side='left'>
                 {data.label}
               </TooltipContent>
             )}
