@@ -70,9 +70,9 @@ export function Sidebar() {
                     <TooltipTrigger asChild>
                       <Button onClick={() => {}} variant='outline' className='mt-5 h-10 w-full justify-center'>
                         <span className={cn(isOpen === false ? '' : 'mr-4')}>
-                          <LogOut size={18} />
+                          <LogOut color={'#E53C3C'} size={18} />
                         </span>
-                        <p className={cn('whitespace-nowrap', !isOpen ? 'hidden' : '')}>تسجيل خروج</p>
+                        <p className={cn('whitespace-nowrap text-[#E53C3C]', !isOpen ? 'hidden' : '')}>تسجيل خروج</p>
                       </Button>
                     </TooltipTrigger>
                     {!isOpen && (
