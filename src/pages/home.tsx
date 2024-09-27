@@ -5,6 +5,7 @@ import { PageContent } from '@/components/page-content.tsx'
 import useSidebarMenuLoader from '@/hooks/sidebarMenuLoader.ts'
 
 export default function HomePage() {
+  // Load corresponding sidebar menu
   const { loadSidebarMenu } = useSidebarMenuLoader()
   loadSidebarMenu({ menuKey: 'main' })
 
@@ -20,7 +21,7 @@ export default function HomePage() {
         </BreadcrumbList>
       </Breadcrumb>
       <PageContent>
-        <div>مرحباً بك في قطاع الاحوال المدنية</div>
+        <div className={'flex min-h-[75vh] w-full items-center justify-center'}>مرحباً بك في قطاع الاحوال المدنية</div>
       </PageContent>
     </ContentLayout>
   )
