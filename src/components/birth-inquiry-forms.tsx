@@ -5,6 +5,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs.tsx'
 import {DateFormField} from '@/components/date-picker/date-form-field.tsx';
+import { SearchableSelectFormField } from '@/components/searchable-select-form-field.tsx';
 
 const nameInquiryFormSchema = z.object({})
 
@@ -96,7 +97,7 @@ export function BirthInquiryForms() {
               name={'motherFullName'}
               formLabel={'محافظة الميلاد'}
             />
-            <DateFormField form={nameInquiryForm} placeholder={'asd'} name={'birthDateStart'} fromYear={1800}/>
+            <DateFormField className={'mt-1'} form={nameInquiryForm} formLabel={'فترة الميلاد من'} name={'birthDateStart'} fromYear={1800}/>
           </form>
         </Form>
       </TabsContent>

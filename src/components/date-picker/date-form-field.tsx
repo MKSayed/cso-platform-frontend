@@ -24,6 +24,7 @@ export interface DatePickerProps {
   formLabel?: string
   placeholder?: string
   formDescription?: string
+  className?: string
 }
 
 const formatDate = (date: Date): string => {
@@ -60,7 +61,8 @@ export function DateFormField({
   form,
   formLabel,
   placeholder,
-  formDescription
+  formDescription,
+  className
 }: DatePickerProps) {
   const [isOpen, setIsOpen] = useState(false)
   const [date, setDate] = useState<Date>(new Date()) // Internal date state, needed for reset values on cancel functionality
@@ -98,7 +100,7 @@ export function DateFormField({
       control={form.control}
       name={name}
       render={({ field }) => (
-        <FormItem className='flex flex-col'>
+        <FormItem className={cn('flex flex-col', className)}>
           <FormLabel className='text-right'>{formLabel}</FormLabel>
           <Popover
             modal={true}
