@@ -1,4 +1,4 @@
-import { Navbar } from '@/components/navbar'
+import { Navbar } from '@/components/navbar/navbar.tsx'
 import { ReactNode } from 'react'
 
 type props = {

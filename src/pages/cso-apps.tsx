@@ -61,7 +61,7 @@ export default function CsoApps() {
             color={'#24B755'}
             textColor={'white'}
             icon={<img src={babyIcon} alt='baby' />}
-            to={'inquiry'}
+            to={'birth'}
           />
           <AppCard
             title={'تطبيق الوفاة'}

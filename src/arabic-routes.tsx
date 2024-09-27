@@ -3,6 +3,7 @@ import LoginPage from '@/pages/login-page/login-page.tsx'
 import Layout from '@/containers/layout.tsx'
 import Home from '@/pages/home.tsx'
 import CsoApps from '@/pages/cso-apps.tsx'
+import BirthApp from '@/pages/birth-app.tsx'
 
 export const browserRouter = createBrowserRouter([
   { path: '/', element: <LoginPage /> },
@@ -11,7 +12,13 @@ export const browserRouter = createBrowserRouter([
     element: <Layout />,
     children: [
       { path: 'home', element: <Home /> },
-      { path: 'cso-apps', children: [{ index: true, element: <CsoApps /> }] },
+      {
+        path: 'cso-apps',
+        children: [
+          { index: true, element: <CsoApps /> },
+          { path: 'birth', element: <BirthApp /> },
+        ],
+      },
     ],
   },
 ])

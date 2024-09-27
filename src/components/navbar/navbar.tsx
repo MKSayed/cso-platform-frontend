@@ -1,4 +1,4 @@
-import { UserNav } from '@/components/user-nav.tsx'
+import { UserNav } from '@/components/navbar/user-nav.tsx'
 
 type props = {
   title: string
