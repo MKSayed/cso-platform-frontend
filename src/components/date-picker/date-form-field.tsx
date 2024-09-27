@@ -5,10 +5,10 @@ import { Calendar } from '@/components/date-picker/calendar'
 import { DateInput } from '@/components/date-picker/date-input'
 import { ar } from 'date-fns/locale'
 import { format } from 'date-fns'
-import { FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form.tsx';
+import { FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form.tsx'
 import { UseFormReturn } from 'react-hook-form'
-import { cn } from '@/lib/utils.ts';
-import { CalendarIcon } from 'lucide-react';
+import { cn } from '@/lib/utils.ts'
+import { CalendarIcon } from 'lucide-react'
 
 export interface DatePickerProps {
   /** Click handler for applying the updates from DateFormField. */
@@ -24,6 +24,7 @@ export interface DatePickerProps {
   formLabel?: string
   placeholder?: string
   formDescription?: string
+  disabled?: boolean
   className?: string
 }
 
@@ -62,26 +63,24 @@ export function DateFormField({
   formLabel,
   placeholder,
   formDescription,
-  className
+  disabled,
+  className,
 }: DatePickerProps) {
   const [isOpen, setIsOpen] = useState(false)
   const [date, setDate] = useState<Date>(new Date()) // Internal date state, needed for reset values on cancel functionality
   const [hasUpdatedOnce, setHasUpdatedOnce] = useState<boolean>(false)
 
-
-
   // Ref to store the value of date when the date picker is opened
   const openedDateRef = useRef<Date>(new Date())
 
-  function resetValues(){
+  function resetValues() {
     if (hasUpdatedOnce) {
-    form.setValue(name, openedDateRef.current)
-    setDate(openedDateRef.current)
-      } else{
+      form.setValue(name, openedDateRef.current)
+      setDate(openedDateRef.current)
+    } else {
       form.setValue(name, undefined)
     }
   }
-
 
   // Helper function to check if two dates are equal
   const areDatesEqual = (a?: Date, b?: Date): boolean => {
@@ -115,6 +114,7 @@ export function DateFormField({
             <PopoverTrigger asChild>
               <FormControl>
                 <Button
+                  disabled={disabled}
                   variant={'outline'}
                   className={cn('text-right font-normal', !field.value && 'text-muted-foreground')}
                 >
@@ -125,7 +125,7 @@ export function DateFormField({
               </FormControl>
             </PopoverTrigger>
 
-             {formDescription && <FormDescription>{formDescription}</FormDescription>}
+            {formDescription && <FormDescription>{formDescription}</FormDescription>}
 
             <PopoverContent align={align} className='w-auto'>
               <div className='flex py-2'>
@@ -135,7 +135,8 @@ export function DateFormField({
                       <DateInput
                         value={date}
                         onChange={(v) => {
-                        setDate(v)}}
+                          setDate(v)
+                        }}
                       />
                     </div>
                     <div>
@@ -147,12 +148,12 @@ export function DateFormField({
                         defaultMonth={new Date()}
                         month={date}
                         selected={date}
-                        onSelect={(v) =>  {
-                        // @ts-expect-error Typescript issue
+                        onSelect={(v) => {
+                          // @ts-expect-error Typescript issue
                           setDate(v)
-                        } }
+                        }}
                         onMonthChange={(v) => {
-                        setDate(v)
+                          setDate(v)
                         }}
                         fromYear={fromYear}
                         toYear={toYear}
