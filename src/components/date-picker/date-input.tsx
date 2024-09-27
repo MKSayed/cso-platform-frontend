@@ -182,7 +182,7 @@ const DateInput: React.FC<DateInputProps> = ({ value, onChange }) => {
 
   return (
     <div>
-      <div className='text-md flex w-fit items-center justify-center rounded-lg border px-1'>
+      <div className='text-md flex w-fit items-center justify-center rounded-lg border p-1'>
         <input
           type='text'
           ref={dayRef}
