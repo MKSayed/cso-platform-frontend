@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs.tsx'
+import {DateFormField} from '@/components/date-picker/date-form-field.tsx';
 
 const nameInquiryFormSchema = z.object({})
 
@@ -95,6 +96,7 @@ export function BirthInquiryForms() {
               name={'motherFullName'}
               formLabel={'محافظة الميلاد'}
             />
+            <DateFormField form={nameInquiryForm} placeholder={'asd'} name={'birthDateStart'} fromYear={1800}/>
           </form>
         </Form>
       </TabsContent>
