@@ -14,7 +14,7 @@ const nameInquiryFormSchema = z.object({ birthDateStart: z.date().nullish(), bir
 
 const idnumInquiryFormSchema = z.object({})
 
-export function BirthInquiryForms({ onTabValueChange }: { onTabValueChange: (v: string) => void }) {
+export function BirthInquiryForms({ onTabValueChange, defaultTabValue }: { onTabValueChange: (v: string) => void, defaultTabValue: string }) {
   const [birthSwitch, setIsBirthSwitch] = useState<boolean>(false)
   // Define forms
   const nameInquiryForm = useForm<z.infer<typeof nameInquiryFormSchema>>({
@@ -38,7 +38,7 @@ export function BirthInquiryForms({ onTabValueChange }: { onTabValueChange: (v: 
   }
 
   return (
-    <Tabs onValueChange={onTabValueChange} defaultValue='name'>
+    <Tabs onValueChange={onTabValueChange} defaultValue={defaultTabValue}>
       <TabsList className={'h-[42px] bg-[#0B0367] text-white'}>
         <TabsTrigger className={'h-[32px] min-w-28 text-sm font-light data-[state=active]:font-medium'} value='idnum'>
           بالرقم القومي

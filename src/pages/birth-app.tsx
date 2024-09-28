@@ -15,7 +15,7 @@ import { BirthInquiryForms } from '@/components/birth-inquiry-forms.tsx'
 import { useState } from 'react'
 
 export default function BirthApp() {
-  const [activeInquiryTab, setActiveInquiryTab] = useState<string>('')
+  const [activeInquiryTab, setActiveInquiryTab] = useState<string>('name')
 
   // Load corresponding sidebar menu
   const { loadSidebarMenu } = useSidebarMenuLoader()
@@ -50,7 +50,7 @@ export default function BirthApp() {
       </Breadcrumb>
       <PageContent>
         <div className={'flex w-full justify-start'}>
-          <BirthInquiryForms onTabValueChange={setActiveInquiryTab} />
+          <BirthInquiryForms defaultTabValue={activeInquiryTab} onTabValueChange={setActiveInquiryTab} />
         </div>
       </PageContent>
     </ContentLayout>
