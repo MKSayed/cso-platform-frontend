@@ -37,7 +37,7 @@ export default function CsoApps() {
       <Breadcrumb>
         <BreadcrumbList>
           <BreadcrumbItem>
-            <BreadcrumbLink>
+            <BreadcrumbLink asChild>
               <Link to={'/home'}>
                 <Home size={20} />
               </Link>
