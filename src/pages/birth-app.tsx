@@ -12,8 +12,11 @@ import { Home } from 'lucide-react'
 import { PageContent } from '@/components/page-content.tsx'
 import useSidebarMenuLoader from '@/hooks/sidebarMenuLoader.ts'
 import { BirthInquiryForms } from '@/components/birth-inquiry-forms.tsx'
+import { useState } from 'react';
 
 export default function BirthApp() {
+  const [activeInquiryTab, setActiveInquiryTab] = useState<string>('')
+
   // Load corresponding sidebar menu
   const { loadSidebarMenu } = useSidebarMenuLoader()
   loadSidebarMenu({ menuKey: 'main' })
@@ -42,13 +45,14 @@ export default function BirthApp() {
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
-            <BreadcrumbPage>استعلام بالاسم</BreadcrumbPage>
+
+            <BreadcrumbPage>{activeInquiryTab === 'name' ? 'استعلام بالاسم' : 'استعلام بالرقم القومي' }</BreadcrumbPage>
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>
       <PageContent>
         <div className={'flex w-full justify-start'}>
-          <BirthInquiryForms />
+          <BirthInquiryForms onTabValueChange={setActiveInquiryTab} />
         </div>
       </PageContent>
     </ContentLayout>
