@@ -14,7 +14,13 @@ const nameInquiryFormSchema = z.object({ birthDateStart: z.date().nullish(), bir
 
 const idnumInquiryFormSchema = z.object({})
 
-export function BirthInquiryForms({ onTabValueChange, defaultTabValue }: { onTabValueChange: (v: string) => void, defaultTabValue: string }) {
+export function BirthInquiryForms({
+  onTabValueChange,
+  defaultTabValue,
+}: {
+  onTabValueChange: (v: string) => void
+  defaultTabValue: string
+}) {
   const [birthSwitch, setIsBirthSwitch] = useState<boolean>(false)
   // Define forms
   const nameInquiryForm = useForm<z.infer<typeof nameInquiryFormSchema>>({
@@ -68,6 +74,13 @@ export function BirthInquiryForms({ onTabValueChange, defaultTabValue }: { onTab
               <InputFormField
                 className='border-gray-400'
                 form={nameInquiryForm}
+                name={'fatherFirstName'}
+                formLabel={''}
+                placeholder={'الاسم الثاني'}
+              />
+              <InputFormField
+                className='border-gray-400'
+                form={nameInquiryForm}
                 name={'fatherSecondName'}
                 formLabel={''}
                 placeholder={'الاسم الثالث'}
@@ -77,28 +90,21 @@ export function BirthInquiryForms({ onTabValueChange, defaultTabValue }: { onTab
                 form={nameInquiryForm}
                 name={'familyName'}
                 formLabel={''}
-                placeholder={'الاسم العائلة'}
-              />
-              <InputFormField
-                className='border-gray-400'
-                form={nameInquiryForm}
-                name={'fatherFirstName'}
-                formLabel={''}
-                placeholder={'الاسم الثاني'}
+                placeholder={'اسم العائلة'}
               />
               <InputFormField
                 labelClassName={'py-1'}
                 className='border-gray-400'
                 form={nameInquiryForm}
                 name={'motherFullName'}
-                formLabel={'الاسم الام'}
+                formLabel={'اسم الام'}
               />
               <InputFormField
                 labelClassName={'py-1'}
                 className='border-gray-400'
                 form={nameInquiryForm}
-                name={'motherFullName'}
-                formLabel={'الاسم الشهرة'}
+                name={'fullNickName'}
+                formLabel={'اسم الشهرة'}
               />
 
               <SearchableSelectFormField

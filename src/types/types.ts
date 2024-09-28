@@ -6,3 +6,11 @@ export type sidebarItem = {
   active: boolean
   icon: LucideIcon
 }
+
+export type birthData = {
+  firstName: string
+  fatherFullName: string
+  motherFullName: string
+  birthDate: string
+  idnum: number
+}

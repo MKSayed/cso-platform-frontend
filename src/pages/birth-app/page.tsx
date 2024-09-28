@@ -13,6 +13,8 @@ import { PageContent } from '@/components/page-content.tsx'
 import useSidebarMenuLoader from '@/hooks/sidebarMenuLoader.ts'
 import { BirthInquiryForms } from '@/components/birth-inquiry-forms.tsx'
 import { useState } from 'react'
+import { columns } from './columns.tsx'
+import { DataTable } from '@/components/ui/data-table.tsx'
 
 export default function BirthApp() {
   const [activeInquiryTab, setActiveInquiryTab] = useState<string>('name')
@@ -49,8 +51,25 @@ export default function BirthApp() {
         </BreadcrumbList>
       </Breadcrumb>
       <PageContent>
-        <div className={'flex w-full justify-start'}>
-          <BirthInquiryForms defaultTabValue={activeInquiryTab} onTabValueChange={setActiveInquiryTab} />
+        <div className={'flex w-full justify-start gap-5'}>
+          <div className={'hidden lg:block'}>
+            <BirthInquiryForms defaultTabValue={activeInquiryTab} onTabValueChange={setActiveInquiryTab} />
+          </div>
+          <div className={'w-full overflow-x-hidden'}>
+            <DataTable
+              columns={columns}
+              // Dummy data for UI testing purpose
+              data={[
+                {
+                  firstName: 'محمود',
+                  fatherFullName: 'خالد سيد عبدالرحيم ابراهيم محمد خليل',
+                  motherFullName: 'حنان سليمان محمد',
+                  birthDate: '10/10/2024',
+                  idnum: 23423423423432,
+                },
+              ]}
+            />
+          </div>
         </div>
       </PageContent>
     </ContentLayout>
