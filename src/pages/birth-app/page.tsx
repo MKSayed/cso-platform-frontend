@@ -9,7 +9,7 @@ import {
 } from '@/components/ui/breadcrumb.tsx'
 import { Link } from 'react-router-dom'
 import { Home } from 'lucide-react'
-import { PageContent } from '@/components/page-content.tsx'
+import { PageContent } from '@/containers/page-content.tsx'
 import useSidebarMenuLoader from '@/hooks/sidebarMenuLoader.ts'
 import { BirthInquiryForms } from '@/components/birth-inquiry-forms.tsx'
 import { useState } from 'react'

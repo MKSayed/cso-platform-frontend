@@ -4,6 +4,7 @@ import Layout from '@/containers/layout.tsx'
 import Home from '@/pages/home.tsx'
 import CsoApps from '@/pages/cso-apps.tsx'
 import BirthApp from '@/pages/birth-app/page.tsx'
+import PersonFullDetails from '@/pages/person-full-details/person-full-details.tsx'
 
 export const browserRouter = createBrowserRouter([
   { path: '/', element: <LoginPage /> },
@@ -17,6 +18,10 @@ export const browserRouter = createBrowserRouter([
         children: [
           { index: true, element: <CsoApps /> },
           { path: 'birth', element: <BirthApp /> },
+          {
+            path: 'birth/:idnum',
+            element: <PersonFullDetails />,
+          },
         ],
       },
     ],

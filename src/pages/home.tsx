@@ -1,7 +1,7 @@
 import { ContentLayout } from '@/containers/content-layout.tsx'
 import { Breadcrumb, BreadcrumbItem, BreadcrumbList, BreadcrumbPage } from '@/components/ui/breadcrumb'
 import { Home } from 'lucide-react'
-import { PageContent } from '@/components/page-content.tsx'
+import { PageContent } from '@/containers/page-content.tsx'
 import useSidebarMenuLoader from '@/hooks/sidebarMenuLoader.ts'
 
 export default function HomePage() {

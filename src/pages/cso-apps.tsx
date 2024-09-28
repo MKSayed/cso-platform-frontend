@@ -8,7 +8,7 @@ import {
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb.tsx'
 import { Home } from 'lucide-react'
-import { PageContent } from '@/components/page-content.tsx'
+import { PageContent } from '@/containers/page-content.tsx'
 import { AppCard } from '@/components/app-card.tsx'
 import useSidebarMenuLoader from '@/hooks/sidebarMenuLoader.ts'
 import babyIcon from '@/assets/baby.svg'

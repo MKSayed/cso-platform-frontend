@@ -1,8 +1,8 @@
 import { Outlet } from 'react-router-dom'
-import { ContentLayout } from '@/containers/content-layout.tsx'
 import { Sidebar } from '@/components/sidebar/sidebar.tsx'
 import { useSidebarStore } from '@/stores/sidebar-store.ts'
 import { cn } from '@/lib/utils.ts'
+import { Toaster } from '@/components/ui/sonner.tsx'
 
 export default function Layout() {
   const sidebar = useSidebarStore()
@@ -16,6 +16,7 @@ export default function Layout() {
         )}
       >
         <Outlet />
+        <Toaster />
       </main>
     </div>
   )
