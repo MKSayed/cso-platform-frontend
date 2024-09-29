@@ -30,12 +30,12 @@ export const homeSidebarMenu: sidebarItem[] = [
     to: '/cards',
     icon: IdCard,
   },
-  {
-    label: 'مخازن',
-    active: false,
-    to: '/storage',
-    icon: Container,
-  },
+  // {
+  //   label: 'مخازن',
+  //   active: false,
+  //   to: '/storage',
+  //   icon: Container,
+  // },
   {
     label: 'ترجمة',
     active: false,

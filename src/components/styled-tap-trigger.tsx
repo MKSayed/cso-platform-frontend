@@ -1,9 +1,16 @@
-import { TabsTrigger } from '@/components/ui/tabs.tsx';
-import { cn } from '@/lib/utils.ts';
-import { ReactNode } from 'react';
+import { TabsTrigger } from '@/components/ui/tabs.tsx'
+import { cn } from '@/lib/utils.ts'
+import { ReactNode } from 'react'
 
-
-export function StyledTabTrigger({ children, value, className }: { children: ReactNode; value: string; className?: string }) {
+export function StyledTabTrigger({
+  children,
+  value,
+  className,
+}: {
+  children: ReactNode
+  value: string
+  className?: string
+}) {
   return (
     <TabsTrigger
       className={cn(

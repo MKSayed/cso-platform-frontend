@@ -1,5 +1,5 @@
-import { cn, copyToClipboard } from '@/lib/utils.ts';
-import { Button } from '@/components/ui/button.tsx';
+import { cn, copyToClipboard } from '@/lib/utils.ts'
+import { Button } from '@/components/ui/button.tsx'
 
 interface TextFieldProps {
   label: string
@@ -9,8 +9,7 @@ interface TextFieldProps {
   buttonClassName?: string
 }
 
-export function TextField ({ label, value, className, labelClassName, buttonClassName }: TextFieldProps) {
-
+export function TextField({ label, value, className, labelClassName, buttonClassName }: TextFieldProps) {
   return (
     <div className={cn(`flex items-center justify-between`, className)}>
       <span className={cn('text-sm font-medium', labelClassName)}>{label}</span>

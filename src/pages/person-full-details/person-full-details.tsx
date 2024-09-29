@@ -1,24 +1,48 @@
 import { Home } from 'lucide-react'
-import { Button } from '@/components/ui/button.tsx'
 import { ContentLayout } from '@/containers/content-layout.tsx'
-import { Breadcrumb, BreadcrumbItem, BreadcrumbList, BreadcrumbPage } from '@/components/ui/breadcrumb.tsx'
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from '@/components/ui/breadcrumb.tsx'
 import { PageContent } from '@/containers/page-content.tsx'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs.tsx';
-import { ReactNode } from 'react'
-import { cn, copyToClipboard } from '@/lib/utils.ts';
-import { TextField } from '@/components/text-field.tsx';
-import { BirthTapContent } from '@/pages/person-full-details/birth-tap-content.tsx';
-import { StyledTabTrigger } from '@/components/styled-tap-trigger.tsx';
-
+import { Tabs, TabsContent, TabsList } from '@/components/ui/tabs.tsx'
+import { BirthTapContent } from '@/pages/person-full-details/birth-tap-content.tsx'
+import { StyledTabTrigger } from '@/components/styled-tap-trigger.tsx'
+import { Link } from 'react-router-dom'
 
 export default function PersonFullDetails() {
+  // Call the sidebar loader hook with the appropriate menuKey when design is ready
   return (
     <ContentLayout navbarTitle={'مرحباً... احمد شاهر'}>
       <Breadcrumb>
         <BreadcrumbList>
           <BreadcrumbItem>
+            <BreadcrumbLink asChild>
+              <Link to={'/home'}>
+                <Home size={20} />
+              </Link>
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbLink asChild>
+              <Link to={'/cso-apps'}>تطبيقات الاحوال المدنية</Link>
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbLink asChild>
+              <Link to={'/cso-apps/birth'}>تطبيق المواليد</Link>
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+                 <BreadcrumbSeparator />
+          <BreadcrumbItem>
             <BreadcrumbPage>
-              <Home size={20} />
+              28609010206511
             </BreadcrumbPage>
           </BreadcrumbItem>
         </BreadcrumbList>
@@ -37,8 +61,8 @@ export default function PersonFullDetails() {
             </TabsList>
           </div>
           <TabsContent value={'birth'}>
-            <BirthTapContent/>
-            </TabsContent>
+            <BirthTapContent />
+          </TabsContent>
         </Tabs>
       </PageContent>
     </ContentLayout>
