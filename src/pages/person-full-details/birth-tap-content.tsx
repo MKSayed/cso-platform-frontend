@@ -104,7 +104,7 @@ export function BirthTapContent(){
                 />
                 <TextField
                   className={'gap-2'}
-                  labelClassName={'xl:w-[100px]'}
+                  labelClassName={'xl:w-[40px]'}
                   buttonClassName={'p-2 xl:w-[116px]'}
                   label="مركز/قسم"
                   value="الدرب الاحمر"
@@ -233,7 +233,7 @@ export function BirthTapContent(){
         <div className="rounded-t-lg bg-[#FFFDF5] px-3 py-2 border-t border-[#FCEEA6] ">
 
           <div
-            className="grid grid-cols-3 place-items-center xl:place-items-start items-center gap-2 py-2  xl:grid-cols-12">
+            className="grid grid-cols-3 place-items-center xl:place-items-start items-center gap-2 py-2  xl:grid-cols-10">
 
             <div
               className="flex xl:col-span-3 p-2 gap-2 items-center justify-start rounded-[8px] border-dashed border border-[#646466]">
@@ -275,7 +275,7 @@ export function BirthTapContent(){
           </div>
 
           <div
-            className="grid grid-cols-3 place-items-center xl:place-items-start items-center gap-2 border-t-2 border-white py-2 xl:grid-cols-12">
+            className="grid grid-cols-3 place-items-center xl:place-items-start items-center gap-2 border-t-2 border-white py-2 xl:grid-cols-10">
 
             <div
               className="flex xl:col-span-3 p-2 gap-2 items-center justify-start rounded-[8px] border-dashed border border-[#646466]">
