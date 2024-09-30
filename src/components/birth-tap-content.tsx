@@ -87,14 +87,14 @@ export function BirthTapContent() {
               <div className='flex items-center justify-start gap-2 rounded-[8px] border border-dashed border-[#646466] p-2'>
                 <TextField
                   className={'gap-2'}
-                  labelClassName={'xl:w-[100px]'}
+                  labelClassName={'xl:w-[40px]'}
                   buttonClassName={'p-2 xl:w-[70px]'}
                   label='الدولة'
                   value='مصر'
                 />
                 <TextField
                   className={'gap-2'}
-                  labelClassName={'xl:w-[100px]'}
+                  labelClassName={'xl:w-60px]'}
                   buttonClassName={'p-2 xl:w-[87px]'}
                   label='المحافظة'
                   value='مصر'
@@ -285,7 +285,7 @@ export function BirthTapContent() {
           </div>
         </div>
 
-        <div className='relative flex justify-end'>
+        <div className='fixed flex justify-end bottom-0 left-8'>
           <Popover open={isOpen} onOpenChange={setIsOpen}>
             <PopoverTrigger asChild>
               <div className='mb-4 flex items-center justify-between'>
