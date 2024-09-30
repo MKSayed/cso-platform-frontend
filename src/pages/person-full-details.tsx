@@ -10,7 +10,7 @@ import {
 } from '@/components/ui/breadcrumb.tsx'
 import { PageContent } from '@/containers/page-content.tsx'
 import { Tabs, TabsContent, TabsList } from '@/components/ui/tabs.tsx'
-import { BirthTapContent } from '@/pages/person-full-details/birth-tap-content.tsx'
+import { BirthTapContent } from '@/components/birth-tap-content.tsx'
 import { StyledTabTrigger } from '@/components/styled-tap-trigger.tsx'
 import { Link } from 'react-router-dom'
 
