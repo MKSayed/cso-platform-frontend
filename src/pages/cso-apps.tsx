@@ -101,7 +101,7 @@ export default function CsoApps() {
             color={'#67E8F9'}
             textColor={'black'}
             icon={<img src={statisticsIcon} alt='statistics' />}
-            to={''}
+            to={'statistics'}
           />
         </div>
       </PageContent>

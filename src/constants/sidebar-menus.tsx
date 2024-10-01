@@ -57,7 +57,7 @@ export const homeSidebarMenu: sidebarItem[] = [
   {
     label: 'احصائيات',
     active: false,
-    to: '/statistics',
+    to: 'cso-apps/statistics',
     icon: ChartNoAxesCombined,
   },
 ]

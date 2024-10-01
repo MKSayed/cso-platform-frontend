@@ -23,10 +23,10 @@ export function DataTable<TData, TValue>({ columns, data }: DataTableProps<TData
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
-              <TableRow className={'bg-[#0B0367] hover:bg-[#0B0367]'} key={headerGroup.id}>
+              <TableRow key={headerGroup.id} className='bg-[#0B0367] hover:bg-[#0B0367]'>
                 {headerGroup.headers.map((header) => {
                   return (
-                    <TableHead key={header.id}>
+                    <TableHead key={header.id} colSpan={header.colSpan}>
                       {header.isPlaceholder ? null : flexRender(header.column.columnDef.header, header.getContext())}
                     </TableHead>
                   )

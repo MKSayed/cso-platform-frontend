@@ -285,7 +285,7 @@ export function BirthTapContent() {
           </div>
         </div>
 
-        <div className='fixed flex justify-end bottom-0 left-8'>
+        <div className='fixed bottom-0 left-8 flex justify-end'>
           <Popover open={isOpen} onOpenChange={setIsOpen}>
             <PopoverTrigger asChild>
               <div className='mb-4 flex items-center justify-between'>

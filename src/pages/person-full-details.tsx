@@ -39,11 +39,9 @@ export default function PersonFullDetails() {
               <Link to={'/cso-apps/birth'}>تطبيق المواليد</Link>
             </BreadcrumbLink>
           </BreadcrumbItem>
-                 <BreadcrumbSeparator />
+          <BreadcrumbSeparator />
           <BreadcrumbItem>
-            <BreadcrumbPage>
-              28609010206511
-            </BreadcrumbPage>
+            <BreadcrumbPage>28609010206511</BreadcrumbPage>
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>

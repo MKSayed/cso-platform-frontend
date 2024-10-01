@@ -14,12 +14,14 @@ import {
 interface DataTableColumnHeaderProps<TData, TValue> extends React.HTMLAttributes<HTMLDivElement> {
   column: Column<TData, TValue>
   title: string
+  titleClassName?: string
 }
 
 export function DataTableColumnHeader<TData, TValue>({
   column,
   title,
   className,
+  titleClassName,
 }: DataTableColumnHeaderProps<TData, TValue>) {
   if (!column.getCanSort()) {
     return <div className={cn(className)}>{title}</div>
@@ -30,7 +32,7 @@ export function DataTableColumnHeader<TData, TValue>({
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button variant='ghost' size='sm' className='-mr-3 h-8 hover:bg-blue-900 data-[state=open]:bg-[#0B0367]/80'>
-            <span className={'text-white'}>{title}</span>
+            <span className={cn('text-white', titleClassName)}>{title}</span>
             {column.getIsSorted() === 'desc' ? (
               <ArrowDownIcon color={'#FFC000'} className='ml-r h-4 w-4' />
             ) : column.getIsSorted() === 'asc' ? (
