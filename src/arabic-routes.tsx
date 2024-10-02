@@ -6,6 +6,7 @@ import CsoApps from '@/pages/cso-apps.tsx'
 import BirthApp from '@/pages/birth-app/page.tsx'
 import PersonFullDetails from '@/pages/person-full-details.tsx'
 import Statistics from '@/pages/statistics/page.tsx'
+import { ProtectedRoute } from '@/components/protected-route.tsx'
 
 export const browserRouter = createBrowserRouter([
   { path: '/', element: <LoginPage /> },
@@ -13,17 +14,54 @@ export const browserRouter = createBrowserRouter([
     path: '/',
     element: <Layout />,
     children: [
-      { path: 'home', element: <Home /> },
+      {
+        path: 'home',
+        element: (
+          <ProtectedRoute>
+            {' '}
+            <Home />{' '}
+          </ProtectedRoute>
+        ),
+      },
       {
         path: 'cso-apps',
         children: [
-          { index: true, element: <CsoApps /> },
-          { path: 'birth', element: <BirthApp /> },
+          {
+            index: true,
+            element: (
+              <ProtectedRoute>
+                {' '}
+                <CsoApps />{' '}
+              </ProtectedRoute>
+            ),
+          },
+          {
+            path: 'birth',
+            element: (
+              <ProtectedRoute>
+                {' '}
+                <BirthApp />{' '}
+              </ProtectedRoute>
+            ),
+          },
           {
             path: 'birth/:idnum',
-            element: <PersonFullDetails />,
+            element: (
+              <ProtectedRoute>
+                {' '}
+                <PersonFullDetails />{' '}
+              </ProtectedRoute>
+            ),
           },
-          { path: 'statistics', element: <Statistics /> },
+          {
+            path: 'statistics',
+            element: (
+              <ProtectedRoute>
+                {' '}
+                <Statistics />{' '}
+              </ProtectedRoute>
+            ),
+          },
         ],
       },
     ],
