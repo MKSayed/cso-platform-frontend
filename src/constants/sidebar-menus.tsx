@@ -1,4 +1,4 @@
-import { sidebarItem } from '@/types/types.ts'
+import { SidebarItem } from '@/types/types.ts'
 import {
   IdCard,
   Presentation,
@@ -11,7 +11,7 @@ import {
 } from 'lucide-react'
 
 // Define the menu items for the "Home" sidebar
-export const homeSidebarMenu: sidebarItem[] = [
+export const homeSidebarMenu: SidebarItem[] = [
   {
     label: 'لوحة المعلومات',
     active: false,
@@ -73,7 +73,7 @@ export function getSidebarMenu({
 }: {
   pathname: string
   menuKey: menuKey
-}): sidebarItem[] {
+}): SidebarItem[] {
   let activatedSidebarMenu // Variable to hold the activated sidebar menu items
 
   // Determine which menu to return based on the `menuKey`

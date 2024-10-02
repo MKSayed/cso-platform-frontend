@@ -18,6 +18,8 @@ import divorceIcon from '@/assets/divorce.svg'
 import familyTreeIcon from '@/assets/family-tree.svg'
 import statisticsIcon from '@/assets/statistics.svg'
 import { Link } from 'react-router-dom'
+import { useUserStore } from '@/stores/user.ts';
+import { useEffect } from 'react';
 
 // Next lines is needed to cause tailwind engine to load these classes into the output bundle
 // bg-[#24B755] hover:bg-[#24B755]/70
@@ -28,12 +30,16 @@ import { Link } from 'react-router-dom'
 // bg-[#67E8F9] hover:bg-[#67E8F9]/70
 
 export default function CsoApps() {
-  // Load corresponding sidebar menu
+  const user = useUserStore(state => state.user)
   const { loadSidebarMenu } = useSidebarMenuLoader()
+  useEffect(() => {
+  // Load corresponding sidebar menu
   loadSidebarMenu({ menuKey: 'main' })
+  }, []);
+
 
   return (
-    <ContentLayout navbarTitle={'مرحباً... احمد شاهر'}>
+    <ContentLayout navbarTitle={`مرحباً... ${user?.fullName}`}>
       <Breadcrumb>
         <BreadcrumbList>
           <BreadcrumbItem>

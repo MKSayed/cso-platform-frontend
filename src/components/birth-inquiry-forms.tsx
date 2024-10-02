@@ -59,7 +59,7 @@ export function BirthInquiryForms({
           <form
             onSubmit={nameInquiryForm.handleSubmit(onNameInquirySubmit)}
             className={
-              'pb-1 shadow-[0px_1px_2px_0px_rgba(0,_0,_0,_0.05) flex min-h-[70vh] min-w-[240px] shrink-0 flex-col justify-around gap-3 rounded-lg border-[1.5px] border-[#E2E8F0] px-6'
+              'shadow-[0px_1px_2px_0px_rgba(0,_0,_0,_0.05) flex min-h-[70vh] min-w-[240px] shrink-0 flex-col justify-around gap-3 rounded-lg border-[1.5px] border-[#E2E8F0] px-6 pb-1'
             }
           >
             <div className={'flex flex-col gap-1 text-right'}>

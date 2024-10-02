@@ -20,14 +20,18 @@ export function DataTable<TData, TValue>({ columns, data }: DataTableProps<TData
   return (
     <div>
       <div className='rounded-md border'>
-        <Table >
+        <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
-              <TableRow key={headerGroup.id} className='bg-[#0B0367] hover:bg-[#0B0367] rounded-t-md'>
+              <TableRow key={headerGroup.id} className='rounded-t-md bg-[#0B0367] hover:bg-[#0B0367]'>
                 {headerGroup.headers.map((header) => {
                   console.log(header)
                   return (
-                    <TableHead key={header.id} colSpan={header.colSpan} className={`${header.column.getIsLastColumn() ? 'rounded-tl-md' : header.index === 0 ? 'rounded-tr-md' : ''}`}>
+                    <TableHead
+                      key={header.id}
+                      colSpan={header.colSpan}
+                      className={`${header.column.getIsLastColumn() ? 'rounded-tl-md' : header.index === 0 ? 'rounded-tr-md' : ''}`}
+                    >
                       {header.isPlaceholder ? null : flexRender(header.column.columnDef.header, header.getContext())}
                     </TableHead>
                   )

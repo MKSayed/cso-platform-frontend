@@ -1,12 +1,12 @@
 import { create } from 'zustand'
 import { persist, createJSONStorage } from 'zustand/middleware'
-import { sidebarItem } from '@/types/types.ts'
+import { SidebarItem } from '@/types/types.ts'
 
 type useSidebarStoreType = {
   isOpen: boolean
   setIsOpen: () => void
-  items: sidebarItem[]
-  setItems: (items: sidebarItem[]) => void
+  items: SidebarItem[]
+  setItems: (items: SidebarItem[]) => void
 }
 
 export const useSidebarStore = create(

@@ -1,4 +1,4 @@
-import { useSidebarStore } from '@/stores/sidebar-store.ts'
+import { useSidebarStore } from '@/stores/sidebar.ts'
 import { useLocation } from 'react-router-dom'
 import { getSidebarMenu } from '@/constants/sidebar-menus.tsx'
 import { type menuKey } from '@/constants/sidebar-menus.tsx'
@@ -14,9 +14,9 @@ export default function useSidebarMenuLoader() {
   const loadSidebarMenu = ({ menuKey }: { menuKey: menuKey }) => {
     // useEffect hook to perform side effects when `pathname` changes
     // Retrieve the activated sidebar menu items based on the current pathname and menu key 'home'
-    const activatedHomeSidebarMenu = getSidebarMenu({ pathname, menuKey: menuKey })
+    const activatedSidebarMenu = getSidebarMenu({ pathname, menuKey: menuKey })
     // Update the sidebar items in the store with the home sidebar menu
-    setSidebarItems(activatedHomeSidebarMenu)
+    setSidebarItems(activatedSidebarMenu)
   }
   return { loadSidebarMenu }
 }

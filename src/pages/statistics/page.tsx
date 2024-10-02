@@ -17,14 +17,17 @@ import { DataTable } from '@/components/ui/data-table.tsx'
 import { Tabs, TabsContent, TabsList } from '@/components/ui/tabs.tsx'
 import { StyledTabTrigger } from '@/components/styled-tap-trigger.tsx'
 import { BirthTapContent } from '@/components/birth-tap-content.tsx'
-import { useState } from 'react'
+import { useEffect, useState } from 'react';
 
 export default function Statistics() {
   const [activeTab, setActiveTab] = useState<string>('governorate')
 
-  // Load corresponding sidebar menu
   const { loadSidebarMenu } = useSidebarMenuLoader()
+  useEffect(() => {
+  // Load corresponding sidebar menu
   loadSidebarMenu({ menuKey: 'main' })
+  }, []);
+
 
   return (
     <ContentLayout navbarTitle={'مرحباً... احمد شاهر'}>

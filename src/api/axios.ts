@@ -1,21 +1,23 @@
-import Axios from 'axios'
+import Axios, { type InternalAxiosRequestConfig } from 'axios'
 
-const API_URL = 'http://localhost:8005/'
-// function authRequestInterceptor(config) {
-//   const token = getAuthToken()
-//   if (token) {
-//     config.headers.authorization = `Bearer ${token}`
-//   }
-//   config.headers.Accept = 'application/json'
-//   return config
-// }
+const API_URL = 'http://localhost:8080/' // Development API URL
 
+function authRequestInterceptor(config: InternalAxiosRequestConfig): InternalAxiosRequestConfig {
+  const token = localStorage.getItem('token')
+  if (token) {
+    config.headers.authorization = `Bearer ${token}`
+  }
+  config.headers.Accept = 'application/json'
+  return config
+}
+
+// Axios instance to be used to make API calls throughout the application
 export const axiosInstance = Axios.create({
   baseURL: API_URL,
 })
 
-axiosInstance.defaults.timeout = 10000
-// axiosInstance.interceptors.request.use(authRequestInterceptor)
+axiosInstance.defaults.timeout = 10000 // Application wide request timeout
+axiosInstance.interceptors.request.use(authRequestInterceptor) // Intercept all request and attach authorization heaader
 axiosInstance.interceptors.response.use(
   (response) => {
     // return response.data;

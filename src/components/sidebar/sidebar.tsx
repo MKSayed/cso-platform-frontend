@@ -1,7 +1,7 @@
 import ahwalLogo from '@/assets/logo_big.png'
 
 import { cn } from '@/lib/utils.ts'
-import { useSidebarStore } from '@/stores/sidebar-store.ts'
+import { useSidebarStore } from '@/stores/sidebar.ts'
 import { Button } from '@/components/ui/button.tsx'
 import { SidebarToggle } from '@/components/sidebar/sidebar-toggle.tsx'
 import { ScrollArea } from '@/components/ui/scroll-area.tsx'

@@ -1,14 +1,11 @@
 import { FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
 import { cn } from '@/lib/utils.ts'
-import { Control, FieldValues, FormState } from 'react-hook-form'
 import { ReactNode } from 'react'
 
 type Props = {
-  form: {
-    control: Control<FieldValues>
-    formState: FormState<FieldValues>
-  }
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  form: any
   name: string
   formLabel: string
   placeholder?: string

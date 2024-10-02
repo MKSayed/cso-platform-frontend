@@ -8,9 +8,43 @@ import personSvg from '@/assets/person-icon.svg'
 import keySvg from '@/assets/key-fill.svg'
 import { LoadingButton } from '@/components/loading-button.tsx'
 import { PasswordInputFormField } from '@/components/password-input-form-field.tsx'
+import { z } from 'zod'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { useLogin } from '@/api/api.ts'
+import { Alert, AlertDescription } from '@/components/ui/alert.tsx'
+import { ExclamationTriangleIcon } from '@radix-ui/react-icons'
+import { useNavigate } from 'react-router-dom'
+import { useUserStore } from '@/stores/user.ts'
 
+const loginFormSchema = z.object({
+  username: z.string().min(1, 'يجب ادخال اسم المستخدم'),
+  password: z.string().min(1, 'يجب ادخال كلمة السر'),
+})
+
+export type loginFormData = z.infer<typeof loginFormSchema>
 export default function LoginPage() {
-  const form = useForm()
+  const navigate = useNavigate()
+  const loginForm = useForm<loginFormData>({
+    resolver: zodResolver(loginFormSchema),
+    defaultValues: {
+      password: '',
+      username: '',
+    },
+  })
+  const { mutate: login, error, isPending, data } = useLogin()
+  const setUser = useUserStore((state) => state.setUser)
+
+  const loginFormSubmitHandler = (formData: loginFormData) => {
+    login(formData, {
+      onSuccess: (responseData) => {
+        setUser(responseData)
+        localStorage.setItem('token', responseData.accessToken)
+
+        navigate('/cso-apps')
+      },
+    })
+  }
+
   return (
     <main className='w-100% flex h-screen items-center justify-center'>
       <img
@@ -35,11 +69,11 @@ export default function LoginPage() {
           </p>
           <p className=' text-lg font-normal text-customBlue duration-300 ease-in-out md:text-2xl'>وزارة الداخلية</p>
           <div className='z-10 -mt-4 w-full'>
-            <Form {...form}>
-              <form onSubmit={form.handleSubmit(() => {})}>
+            <Form {...loginForm}>
+              <form onSubmit={loginForm.handleSubmit(loginFormSubmitHandler)}>
                 <InputFormField
                   rightContent={<PersonIcon />}
-                  form={form}
+                  form={loginForm}
                   name={'username'}
                   formLabel={'اسم المستخدم'}
                   labelClassName={'w-full text-customBlue text-[16px] leading-[24px]'}
@@ -49,7 +83,7 @@ export default function LoginPage() {
                 />
                 <PasswordInputFormField
                   rightContent={<KeyIcon />}
-                  form={form}
+                  form={loginForm}
                   name={'password'}
                   formLabel={'كلمة السر'}
                   labelClassName={'w-full text-customBlue text-[16px] leading-[24px] mt-2'}
@@ -57,12 +91,20 @@ export default function LoginPage() {
                     'min-h-14 rounded-[10px] border-b-[2px] border-l-[0.5px] border-r-[2px] border-t-[0.5px] border-[#010B3899] bg-white pr-11 text-[14px]'
                   }
                 />
-                <LoadingButton loading={false} className={'mt-6 h-12 w-full bg-[#1002A8] text-[18px] font-normal'}>
-                  {' '}
-                  تسجيل دخول{' '}
+                <LoadingButton loading={isPending} className={'mt-6 h-12 w-full bg-[#1002A8] text-[18px] font-normal'}>
+                  تسجيل دخول
                 </LoadingButton>
               </form>
             </Form>
+            {error && (
+              <div className={'mt-4'}>
+                <Alert variant='destructive' className={'bg-red-200'}>
+                  <ExclamationTriangleIcon className='h-4 w-4' />
+                  {/*<AlertTitle className={"mr-5"}>Error</AlertTitle>*/}
+                  <AlertDescription className={'text-center'}>{error.message}</AlertDescription>
+                </Alert>
+              </div>
+            )}
           </div>
         </div>
       </div>
