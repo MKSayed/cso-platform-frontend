@@ -37,6 +37,7 @@ export default function LoginPage() {
   const loginFormSubmitHandler = (formData: loginFormData) => {
     login(formData, {
       onSuccess: (responseData) => {
+        // Set user in zustand store
         setUser(responseData)
         localStorage.setItem('token', responseData.accessToken)
 

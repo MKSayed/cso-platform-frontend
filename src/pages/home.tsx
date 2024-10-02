@@ -3,14 +3,14 @@ import { Breadcrumb, BreadcrumbItem, BreadcrumbList, BreadcrumbPage } from '@/co
 import { Home } from 'lucide-react'
 import { PageContent } from '@/containers/page-content.tsx'
 import useSidebarMenuLoader from '@/hooks/sidebarMenuLoader.ts'
-import { useEffect } from 'react';
+import { useEffect } from 'react'
 
 export default function HomePage() {
   const { loadSidebarMenu } = useSidebarMenuLoader()
   useEffect(() => {
-  // Load corresponding sidebar menu
-  loadSidebarMenu({ menuKey: 'main' })
-  }, []);
+    // Load corresponding sidebar menu
+    loadSidebarMenu({ menuKey: 'main' })
+  }, [])
 
   return (
     <ContentLayout navbarTitle={'مرحباً... احمد شاهر'}>

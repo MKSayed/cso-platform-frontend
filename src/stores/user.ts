@@ -4,7 +4,7 @@ import { LoginResponse } from '@/types/types.ts'
 
 type UseUserStoreType = {
   user: LoginResponse | null
-  setUser: (data: LoginResponse) => void
+  setUser: (data: LoginResponse | null) => void
 }
 
 export const useUserStore = create(
