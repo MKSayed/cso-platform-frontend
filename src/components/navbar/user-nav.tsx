@@ -14,8 +14,11 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu.tsx'
 import { Link } from 'react-router-dom'
+import { useUserStore } from '@/stores/user.ts'
 
 export function UserNav() {
+  const user = useUserStore((state) => state.user)
+  const setUser = useUserStore((state) => state.setUser)
   return (
     <DropdownMenu dir={'rtl'}>
       <TooltipProvider disableHoverableContent>
@@ -34,11 +37,11 @@ export function UserNav() {
         </Tooltip>
       </TooltipProvider>
 
-      <DropdownMenuContent className='w-56' align='end' forceMount>
+      <DropdownMenuContent className='ml-1 w-56' align='center' forceMount>
         <DropdownMenuLabel className='font-normal'>
           <div className='flex flex-col space-y-1'>
-            <p className='text-sm font-medium leading-none'>احمد شاهر</p>
-            <p className='text-xs leading-none text-muted-foreground'>28888888888888</p>
+            <p className='text-sm font-medium leading-none'>{user?.fullName ?? 'حدث خطأ'}</p>
+            <p className='text-xs leading-none text-muted-foreground'>{user?.regCenDescr ?? 'حدث خطأ'}</p>
           </div>
         </DropdownMenuLabel>
         <DropdownMenuSeparator />

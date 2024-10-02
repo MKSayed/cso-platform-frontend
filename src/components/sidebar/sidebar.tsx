@@ -9,9 +9,11 @@ import { SidebarItem } from '@/components/sidebar/sidebar-item.tsx'
 import { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider } from '@/components/ui/tooltip'
 import { LogOut } from 'lucide-react'
 import { Separator } from '@/components/ui/separator.tsx'
+import { useUserStore } from '@/stores/user.ts'
 
 export function Sidebar() {
   const sidebar = useSidebarStore()
+  const setUser = useUserStore((state) => state.setUser)
 
   if (!sidebar) return null
   const isOpen = sidebar.isOpen
@@ -68,7 +70,13 @@ export function Sidebar() {
                 <TooltipProvider disableHoverableContent>
                   <Tooltip delayDuration={100}>
                     <TooltipTrigger asChild>
-                      <Button onClick={() => {}} variant='outline' className='mt-5 h-10 w-full justify-center'>
+                      <Button
+                        onClick={() => {
+                          setUser(null)
+                        }}
+                        variant='outline'
+                        className='mt-5 h-10 w-full justify-center'
+                      >
                         <span className={cn(isOpen === false ? '' : 'mr-4')}>
                           <LogOut color={'#E53C3C'} size={18} />
                         </span>
