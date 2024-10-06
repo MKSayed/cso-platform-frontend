@@ -30,6 +30,7 @@ export function StatisticsInquiryForms({ withWorkLocation }: { withWorkLocation:
           'shadow-[0px_1px_2px_0px_rgba(0,_0,_0,_0.05) flex min-h-[70vh] min-w-[240px] shrink-0 flex-col gap-5 rounded-lg border-[1.5px] border-[#E2E8F0] px-6'
         }
       >
+        {/*Form fields*/}
         <div className={'flex flex-col gap-1 text-right'} dir={'ltr'}>
           <SearchableSelectFormField
             className={'mt-2'}
@@ -78,12 +79,17 @@ export function StatisticsInquiryForms({ withWorkLocation }: { withWorkLocation:
             />
           )}
         </div>
-        <div>
+        {/*End of form fields*/}
+
+        <LoadingButton className={'bg-[#0B0367] text-sm font-normal'}>بحث</LoadingButton>
+
+        {/*Export document*/}
+        <div className='flex flex-col gap-2'>
           <div className={'flex justify-between rounded-md bg-[#2EA154] px-4 py-2 text-white'}>
             <span className={'text-sm font-medium'}> طباعة </span>
             <Printer size={22} />
           </div>
-        </div>
+
         <div className={'flex h-10 gap-2'}>
           <Card className='w-full max-w-24'>
             <Button
@@ -102,8 +108,9 @@ export function StatisticsInquiryForms({ withWorkLocation }: { withWorkLocation:
             </Button>
           </Card>
         </div>
+          </div>
+      {/* End of export document*/}
 
-        <LoadingButton className={'bg-[#0B0367] text-sm font-normal'}>بحث</LoadingButton>
       </form>
     </Form>
   )

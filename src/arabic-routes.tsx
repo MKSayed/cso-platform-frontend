@@ -18,8 +18,7 @@ export const browserRouter = createBrowserRouter([
         path: 'home',
         element: (
           <ProtectedRoute>
-            {' '}
-            <Home />{' '}
+            <Home />
           </ProtectedRoute>
         ),
       },
@@ -30,8 +29,7 @@ export const browserRouter = createBrowserRouter([
             index: true,
             element: (
               <ProtectedRoute>
-                {' '}
-                <CsoApps />{' '}
+                <CsoApps />
               </ProtectedRoute>
             ),
           },
