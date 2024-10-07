@@ -5,10 +5,10 @@ import { cn } from '@/lib/utils.ts'
 import { CaretSortIcon, CheckIcon } from '@radix-ui/react-icons'
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from '@/components/ui/command'
 import { useState } from 'react'
-import { UseFormReturn } from 'react-hook-form'
 
 type props<T> = {
-  form: UseFormReturn
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  form: any
   formLabel?: string
   placeholder?: string
   description?: string
@@ -62,7 +62,7 @@ export function SearchableSelectFormField<T>({
       render={({ field }) => (
         <FormItem className={className}>
           <div className={'flex-start flex'}>
-            <FormLabel className={'w-full text-right'}>{formLabel}</FormLabel>
+            <FormLabel className={'w-full text-right text-foreground'}>{formLabel}</FormLabel>
           </div>
           <Popover open={open} onOpenChange={setOpen}>
             <PopoverTrigger asChild>

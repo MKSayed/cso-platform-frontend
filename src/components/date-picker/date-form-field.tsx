@@ -20,7 +20,8 @@ export interface DatePickerProps {
   /** Option for range of selectable years */
   toYear?: number
   name: string
-  form: UseFormReturn
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  form: any
   formLabel?: string
   placeholder?: string
   formDescription?: string
@@ -100,7 +101,7 @@ export function DateFormField({
       name={name}
       render={({ field }) => (
         <FormItem className={cn('flex flex-col', className)}>
-          <FormLabel className='text-right'>{formLabel}</FormLabel>
+          <FormLabel className='text-right text-foreground'>{formLabel}</FormLabel>
           <Popover
             modal={true}
             open={isOpen}

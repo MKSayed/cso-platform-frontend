@@ -47,11 +47,11 @@ export default function Statistics() {
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
-            <BreadcrumbPage>تطبيق المواليد</BreadcrumbPage>
+            <BreadcrumbPage>الاحصائيات</BreadcrumbPage>
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
-            <BreadcrumbPage>asdsad</BreadcrumbPage>
+            <BreadcrumbPage>إحصائيات الوثائق الممكينة</BreadcrumbPage>
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>
@@ -81,6 +81,44 @@ export default function Statistics() {
                       canceled: 23,
                       taxed: 222,
                       total: 234,
+                      governorate: 'القاهرة',
+                      fullTotal: 233333,
+                    },
+                    {
+                      issued: 22,
+                      repeated: 33,
+                      canceled: 23,
+                      taxed: 222,
+                      total: 234,
+                      governorate: 'القاهرة',
+                      fullTotal: 233333,
+                    },
+                    {
+                      issued: 22,
+                      repeated: 33,
+                      canceled: 23,
+                      taxed: 222,
+                      total: 234,
+                      governorate: 'القاهرة',
+                      fullTotal: 233333,
+                    },
+                    {
+                      issued: 22,
+                      repeated: 33,
+                      canceled: 23,
+                      taxed: 222,
+                      total: 234,
+                      governorate: 'القاهرة',
+                      fullTotal: 233333,
+                    },
+                    {
+                      issued: 22,
+                      repeated: 33,
+                      canceled: 23,
+                      taxed: 222,
+                      total: 234,
+                      governorate: 'القاهرة',
+                      fullTotal: 233333,
                     },
                   ]}
                 />

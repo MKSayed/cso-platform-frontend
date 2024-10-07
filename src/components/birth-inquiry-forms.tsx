@@ -63,7 +63,7 @@ export function BirthInquiryForms({
             }
           >
             <div className={'flex flex-col gap-1 text-right'}>
-              <span>الاسم بالكامل او جزء منه</span>
+              <span className={'text-foreground'}>الاسم بالكامل او جزء منه</span>
               <InputFormField
                 className='border-gray-400'
                 form={nameInquiryForm}

@@ -52,7 +52,7 @@ export function InputFormField({
         name={name}
         render={({ field }) => (
           <FormItem className='items- flex flex-col'>
-            <FormLabel className={cn('text-right', labelClassName)}>{formLabel}</FormLabel>
+            <FormLabel className={cn('text-right text-foreground', labelClassName)}>{formLabel}</FormLabel>
             <FormControl>
               <Input placeholder={placeholder} className={cn('text-right', className)} {...field} />
             </FormControl>

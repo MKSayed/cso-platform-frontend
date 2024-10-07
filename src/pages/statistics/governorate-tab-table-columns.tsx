@@ -9,9 +9,10 @@ export const columns: ColumnDef<BirthData>[] = [
       <DataTableColumnHeader
         column={column}
         title='محافظة'
-        className={'flex -translate-y-2/3 translate-x-2  justify-center bg-[#0B0367] transition'}
+        className={'flex -translate-y-2/3 pr-2 -mr-2 -pl-0 justify-start bg-[#0B0367]'}
       />
     ),
+        cell: ({ getValue }) => <div className={''}> {getValue()}</div>,
   },
   {
     id: 'normalBirth',
@@ -41,11 +42,14 @@ export const columns: ColumnDef<BirthData>[] = [
           <DataTableColumnHeader
             column={column}
             title='إجمالي'
-            className={'bg-[#F1F0FF] text-[#0B0367] -mr-3'}
-            titleClassName={'text-[#0B0367]'}
-              buttonClassname={'hover:bg-[#fff3fb] mr-0 data-[state=open]:bg-[#fff3fb] w-full justify-start pl-0 w-fit'}
+            className={'bg-[#F1F0FF]'}
+            titleClassName={'text-foreground'}
+            buttonClassname={
+              'hover:bg-[#fff3fb] mr-0 data-[state=open]:bg-[#fff3fb] w-full justify-start px-0 justify-center'
+            }
           />
         ),
+        cell: ({ getValue }) => <div className={'-my-2 bg-[#F1F0FF] p-2 text-center'}> {getValue()}</div>,
       },
     ],
   },
@@ -70,16 +74,19 @@ export const columns: ColumnDef<BirthData>[] = [
           <DataTableColumnHeader
             column={column}
             title='إجمالي'
-            className={'bg-[#F1F0FF] text-[#0B0367] -mr-3'}
-            titleClassName={'text-[#0B0367]'}
-              buttonClassname={'hover:bg-[#fff3fb] mr-0 data-[state=open]:bg-[#fff3fb] w-full justify-start pl-0 w-fit'}
+            className={'bg-[#F1F0FF]'}
+            titleClassName={'text-foreground'}
+            buttonClassname={
+              'hover:bg-[#fff3fb] mr-0 data-[state=open]:bg-[#fff3fb] w-full justify-start px-0 justify-center'
+            }
           />
         ),
+        cell: ({ getValue }) => <div className={'-my-2 bg-[#F1F0FF] p-2 text-center'}> {getValue()}</div>,
       },
     ],
   },
   {
-    accessorKey: 'theTotal',
+    accessorKey: 'fullTotal',
     header: ({ column }) => (
       <DataTableColumnHeader
         className={'flex -translate-x-2 -translate-y-2/3  justify-center bg-[#0B0367] transition'}
@@ -87,5 +94,6 @@ export const columns: ColumnDef<BirthData>[] = [
         title='الإجمالي'
       />
     ),
+    cell: ({ getValue }) => <div className={'text-center'}> {getValue()}</div>,
   },
 ]
