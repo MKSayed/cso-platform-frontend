@@ -61,6 +61,7 @@ export function StatisticsInquiryForms({ withWorkLocation }: { withWorkLocation:
             fromYear={1800}
           />
           <DateFormField
+            side={'left'}
             className={'mt-1'}
             form={statisticsInquiryForm}
             formLabel={'الى'}

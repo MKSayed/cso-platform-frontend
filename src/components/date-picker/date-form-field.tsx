@@ -13,8 +13,10 @@ import { CalendarIcon } from 'lucide-react'
 export interface DatePickerProps {
   /** Click handler for applying the updates from DateFormField. */
   onUpdate?: (values: { date: Date }) => void
-  /** Alignment of popover */
+  /** Alignment of popover content */
   align?: 'start' | 'center' | 'end'
+  /** Alignment of popover window */
+  side?: 'top' | 'bottom' | 'left' | 'right'
   /** Option for range of selectable years */
   fromYear?: number
   /** Option for range of selectable years */
@@ -57,6 +59,7 @@ const getDateAdjustedForTimezone = (dateInput: Date | string): Date => {
 export function DateFormField({
   onUpdate,
   align = 'end',
+  side = 'bottom',
   fromYear = 1800,
   toYear = new Date().getFullYear(),
   name,
@@ -128,7 +131,7 @@ export function DateFormField({
 
             {formDescription && <FormDescription>{formDescription}</FormDescription>}
 
-            <PopoverContent align={align} className='w-auto'>
+            <PopoverContent side={side} align={align} className='w-auto'>
               <div className='flex py-2'>
                 <div className='flex'>
                   <div className='flex flex-col'>
