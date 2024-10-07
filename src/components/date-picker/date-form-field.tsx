@@ -106,7 +106,7 @@ export function DateFormField({
         <FormItem className={cn('flex flex-col', className)}>
           <FormLabel className='text-right text-foreground'>{formLabel}</FormLabel>
           <Popover
-            modal={true}
+            modal={false}
             open={isOpen}
             onOpenChange={(open: boolean) => {
               if (!open) {

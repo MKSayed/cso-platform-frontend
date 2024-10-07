@@ -54,6 +54,7 @@ export function StatisticsInquiryForms({ withWorkLocation }: { withWorkLocation:
             elementLabelKey={'name'}
           />
           <DateFormField
+            side={'left'}
             className={'mt-1 w-full'}
             form={statisticsInquiryForm}
             formLabel={'فترة البحث من'}
