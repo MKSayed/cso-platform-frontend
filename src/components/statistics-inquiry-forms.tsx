@@ -12,6 +12,8 @@ import { Button } from '@/components/ui/button.tsx'
 import MultipleSelector from '@/components/multi-select.tsx'
 import { GovCertType } from '@/types/types.ts'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
+import { act } from 'react-dom/test-utils'
+import { useEffect } from 'react'
 
 const multiSelectOptionSchema = z.object({
   label: z.string(),
@@ -20,29 +22,56 @@ const multiSelectOptionSchema = z.object({
   disable: z.boolean().optional(),
 })
 
-const statisticsInquiryFormSchema = z.object({
-  startDate: z.date(),
-  endDate: z.date(),
-  birthGovernorate: z.array(multiSelectOptionSchema).min(1),
-})
-
-export function StatisticsInquiryForms({
-  withWorkSite,
-  setTableData,
-}: {
-  withWorkSite: boolean
+type props = {
+  activeTab: string
   setTableData: (v: GovCertType[]) => void
-}) {
+  variant: string
+  setVariant: (v: string) => void
+}
+
+export function StatisticsInquiryForms({ activeTab, setTableData, variant, setVariant }: props) {
+  // Define form schema
+  const statisticsInquiryFormSchema = z.object({
+    startDate: z.date({ required_error: 'يجب ادخال بداية فترة البحث' }),
+    endDate: z.date({ required_error: 'يجب ادخال نهاية فترة البحث' }),
+    governorate: z
+      .array(multiSelectOptionSchema)
+      .min(1, 'يجب اختيار محافظة واحدة على الاقل')
+      .refine((value) => {
+        if (activeTab === 'governorate') return true
+        // if more than 1 governorate selected and tab is not governorate return false
+        return value.length < 2
+      }, 'يجب اختيار محافظة واحدة على الاكثر'),
+    worksite: z
+      .array(multiSelectOptionSchema)
+      .min(1)
+      .refine((value) => {
+        if (activeTab === 'worksite') return true
+        // if more than 1 worksite selected and tab is not workSite return false
+        return value.length < 2
+      }, 'يجب اختيار موقع عمل واحد على الاكثر'),
+  })
   // Define form
   const statisticsInquiryForm = useForm<z.infer<typeof statisticsInquiryFormSchema>>({
     resolver: zodResolver(statisticsInquiryFormSchema),
     defaultValues: {
-      startDate: new Date(),
-      endDate: new Date(),
-      birthGovernorate: [{ label: 'الكل', value: 'all', fixed: true }],
+      startDate: undefined,
+      endDate: undefined,
+      governorate: [{ label: 'الكل', value: 'all', fixed: true }],
+      worksite: [{ label: 'الكل', value: 'all', fixed: true }],
     },
   })
 
+  useEffect(() => {
+    if (activeTab === 'governorate') {
+      statisticsInquiryForm.setValue('governorate', [{ label: 'الكل', value: 'all', fixed: true }])
+    } else statisticsInquiryForm.setValue('governorate', [])
+
+    // set worksite default value to empty array in employee tab. but set it to all object in other tabs
+    if (activeTab === 'employee') {
+      statisticsInquiryForm.setValue('worksite', [])
+    } else statisticsInquiryForm.setValue('worksite', [{ label: 'الكل', value: 'all', fixed: true }])
+  }, [activeTab])
   // Define form submit handlers
   function onStatisticsInquiryForm(formData: z.infer<typeof statisticsInquiryFormSchema>) {
     console.log(formData)
@@ -58,7 +87,7 @@ export function StatisticsInquiryForms({
       >
         {/*Form fields*/}
         <div className={'flex flex-col gap-1 text-right'} dir={'ltr'}>
-          {/*Select field controls the type statistics needed and is not included in the form*/}
+          {/*Document type field (doesn't go inside useForm)*/}
           <FormLabel className={'mb-1 mt-2 text-foreground'}>نوع المصدر</FormLabel>
           <Select>
             <SelectTrigger className={'text-foreground'}>
@@ -82,7 +111,7 @@ export function StatisticsInquiryForms({
             className={'mt-1 w-full'}
             form={statisticsInquiryForm}
             formLabel={'فترة البحث من'}
-            name={'birthDateStart'}
+            name={'startDate'}
             fromYear={1800}
           />
           <DateFormField
@@ -90,12 +119,12 @@ export function StatisticsInquiryForms({
             className={'mt-1'}
             form={statisticsInquiryForm}
             formLabel={'الى'}
-            name={'birthDateEnd'}
+            name={'endDate'}
             fromYear={1800}
           />
           <FormField
             control={statisticsInquiryForm.control}
-            name='birthGovernorate'
+            name='governorate'
             render={({ field }) => (
               <FormItem>
                 <FormLabel className={'text-foreground'}>المحافطة</FormLabel>
@@ -104,12 +133,11 @@ export function StatisticsInquiryForms({
                     {...field}
                     // Override field.onChange
                     onChange={(selectedOptions) => {
-                      // Force adding 'all' object if user removed all selected options of the multipleSelector
-                      if (selectedOptions.length === 0) {
+                      // Force adding 'all' object if user removed all selected options of the multipleSelector and activeTab is governorate
+                      if (selectedOptions.length === 0 && activeTab === 'governorate') {
                         field.onChange([{ label: 'الكل', value: 'all', fixed: true }])
-                      } else {
+                      } else if (activeTab === 'governorate')
                         field.onChange(selectedOptions.filter((item) => item.value !== 'all'))
-                      }
                     }}
                     defaultOptions={[
                       { label: 'القاهرة', value: '1' },
@@ -130,22 +158,23 @@ export function StatisticsInquiryForms({
               </FormItem>
             )}
           />
-          {withWorkSite && (
+          {activeTab !== 'governorate' && (
             <FormField
               control={statisticsInquiryForm.control}
-              name='birthGovernorate'
+              name='worksite'
               render={({ field }) => (
                 <FormItem>
                   <FormLabel className={'text-foreground'}>مواقع العمل</FormLabel>
                   <FormControl>
                     <MultipleSelector
                       {...field}
+                      // Override field.onChange
                       onChange={(selectedOptions) => {
-                        if (selectedOptions.length === 0) {
+                        // Force adding 'all' object if user removed all selected options of the multipleSelector and activeTab is governorate
+                        if (selectedOptions.length === 0 && activeTab === 'workSite') {
                           field.onChange([{ label: 'الكل', value: 'all', fixed: true }])
-                        } else {
+                        } else if (activeTab === 'workSite')
                           field.onChange(selectedOptions.filter((item) => item.value !== 'all'))
-                        }
                       }}
                       selectFirstItem={true}
                       defaultOptions={[

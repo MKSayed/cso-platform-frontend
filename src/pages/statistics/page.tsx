@@ -23,6 +23,7 @@ import data from '@/constants/birth-gov-stats-in-period.json'
 export default function Statistics() {
   const [activeTab, setActiveTab] = useState<string>('governorate')
   const [tableData, setTableData] = useState<GovCertType[]>([])
+  const [variant, setVariant] = useState<string>('') // State linked with document type field of the statistics inquiry forms
 
   const { loadSidebarMenu } = useSidebarMenuLoader()
   useEffect(() => {
@@ -64,14 +65,19 @@ export default function Statistics() {
           <div className={'-mt-3 mb-4 flex justify-center'}>
             <TabsList className={'h-[42px] rounded-[6px] border border-gray-200 bg-white text-[#0B0367]'} dir='rtl'>
               <StyledTabTrigger value='governorate'>المحافظة</StyledTabTrigger>
-              <StyledTabTrigger value='workSites'>مواقع العمل</StyledTabTrigger>
+              <StyledTabTrigger value='workSite'>مواقع العمل</StyledTabTrigger>
 
-              <StyledTabTrigger value='employees'>الموظفين</StyledTabTrigger>
+              <StyledTabTrigger value='employee'>الموظفين</StyledTabTrigger>
             </TabsList>
           </div>
           <div className={'flex w-full justify-start gap-5'} dir={'rtl'}>
             <div className={'hidden lg:block'}>
-              <StatisticsInquiryForms setTableData={setTableData} withWorkSite={activeTab !== 'governorate'} />
+              <StatisticsInquiryForms
+                variant={variant}
+                setVariant={setVariant}
+                setTableData={setTableData}
+                activeTab={activeTab}
+              />
             </div>
             <div className={'w-full overflow-x-hidden'}>
               <DataTable
