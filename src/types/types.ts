@@ -25,3 +25,28 @@ export type LoginResponse = {
   roles: string[]
   userName: string
 }
+
+export type BirthGovStatsInPeriodResponse = {
+  startDate: string
+  endDate: string
+  certTypeCode: string
+  certTypeDescr: string
+  certTypeCount: number
+  govCertType: GovCertType[]
+}
+
+export type GovCertType = {
+  serial: number
+  govCode: string
+  govDescr: string
+  govCertTypeCode: string
+  govCertTypeDescr: string
+  govCertTypeTotalCount: number
+  certType: CertType[]
+}
+
+export type CertType = {
+  certTypeCode: string
+  certTypeDescr: string
+  certTypeCount: number
+}

@@ -3,7 +3,6 @@ import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 import { DateFormField } from '@/components/date-picker/date-form-field.tsx'
-import { SearchableSelectFormField } from '@/components/searchable-select-form-field.tsx'
 import { LoadingButton } from '@/components/loading-button.tsx'
 import { Printer } from 'lucide-react'
 import { Card } from '@/components/ui/card.tsx'
@@ -11,27 +10,43 @@ import excelIcon from '@/assets/excel.svg'
 import pdfIcon from '@/assets/pdf.svg'
 import { Button } from '@/components/ui/button.tsx'
 import MultipleSelector from '@/components/multi-select.tsx'
+import { GovCertType } from '@/types/types.ts'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 
 const multiSelectOptionSchema = z.object({
   label: z.string(),
   value: z.string(),
+  fixed: z.boolean().optional(),
   disable: z.boolean().optional(),
 })
 
 const statisticsInquiryFormSchema = z.object({
-  birthDateStart: z.date().nullish(),
-  birthDateEnd: z.date().nullish(),
+  startDate: z.date(),
+  endDate: z.date(),
   birthGovernorate: z.array(multiSelectOptionSchema).min(1),
 })
 
-export function StatisticsInquiryForms({ withWorkLocation }: { withWorkLocation: boolean }) {
+export function StatisticsInquiryForms({
+  withWorkSite,
+  setTableData,
+}: {
+  withWorkSite: boolean
+  setTableData: (v: GovCertType[]) => void
+}) {
   // Define form
   const statisticsInquiryForm = useForm<z.infer<typeof statisticsInquiryFormSchema>>({
     resolver: zodResolver(statisticsInquiryFormSchema),
+    defaultValues: {
+      startDate: new Date(),
+      endDate: new Date(),
+      birthGovernorate: [{ label: 'الكل', value: 'all', fixed: true }],
+    },
   })
 
   // Define form submit handlers
-  function onStatisticsInquiryForm() {}
+  function onStatisticsInquiryForm(formData: z.infer<typeof statisticsInquiryFormSchema>) {
+    console.log(formData)
+  }
 
   return (
     <Form {...statisticsInquiryForm}>
@@ -43,16 +58,25 @@ export function StatisticsInquiryForms({ withWorkLocation }: { withWorkLocation:
       >
         {/*Form fields*/}
         <div className={'flex flex-col gap-1 text-right'} dir={'ltr'}>
-          <SearchableSelectFormField
-            className={'mt-2'}
-            placeholder={'نوع المصدر'}
-            formLabel={'نوع المصدر'}
-            form={statisticsInquiryForm}
-            name={'birthGovernorate'}
-            selectList={[]}
-            elementValueKey={'id'}
-            elementLabelKey={'name'}
-          />
+          {/*Select field controls the type statistics needed and is not included in the form*/}
+          <FormLabel className={'mb-1 mt-2 text-foreground'}>نوع المصدر</FormLabel>
+          <Select>
+            <SelectTrigger className={'text-foreground'}>
+              <SelectValue placeholder='نوع المصدر' />
+            </SelectTrigger>
+            <SelectContent className='text-foreground'>
+              <SelectItem value='شهادات ميلاد'>شهادات ميلاد</SelectItem>
+              <SelectItem value='شهادات وفاة'>شهادات وفاة</SelectItem>
+              <SelectItem value='شهادات زواج'>شهادات زواج</SelectItem>
+              <SelectItem value='شهادات طلاق'>شهادات طلاق</SelectItem>
+              <SelectItem value='قيد عائلي'>قيد عائلي</SelectItem>
+              <SelectItem value='قيد فردي'>قيد فردي</SelectItem>
+              <SelectItem value='تعذر'>تعذر</SelectItem>
+              <SelectItem value='بطاقات مصدرة'>بطاقات مصدرة</SelectItem>
+              <SelectItem value='استمارات'>استمارات</SelectItem>
+            </SelectContent>
+          </Select>
+
           <DateFormField
             side={'left'}
             className={'mt-1 w-full'}
@@ -78,9 +102,22 @@ export function StatisticsInquiryForms({ withWorkLocation }: { withWorkLocation:
                 <FormControl>
                   <MultipleSelector
                     {...field}
+                    // Override field.onChange
+                    onChange={(selectedOptions) => {
+                      // Force adding 'all' object if user removed all selected options of the multipleSelector
+                      if (selectedOptions.length === 0) {
+                        field.onChange([{ label: 'الكل', value: 'all', fixed: true }])
+                      } else {
+                        field.onChange(selectedOptions.filter((item) => item.value !== 'all'))
+                      }
+                    }}
                     defaultOptions={[
                       { label: 'القاهرة', value: '1' },
                       { label: 'الجيزة', value: '2' },
+                      { label: 'اسكندرية', value: '3' },
+                      { label: 'المنوفية', value: '4' },
+                      { label: 'قنا', value: '5' },
+                      { label: 'الغربية', value: '6' },
                     ]}
                     placeholder='اختر المحافظة'
                     emptyIndicator={
@@ -93,7 +130,7 @@ export function StatisticsInquiryForms({ withWorkLocation }: { withWorkLocation:
               </FormItem>
             )}
           />
-          {withWorkLocation && (
+          {withWorkSite && (
             <FormField
               control={statisticsInquiryForm.control}
               name='birthGovernorate'
@@ -103,6 +140,14 @@ export function StatisticsInquiryForms({ withWorkLocation }: { withWorkLocation:
                   <FormControl>
                     <MultipleSelector
                       {...field}
+                      onChange={(selectedOptions) => {
+                        if (selectedOptions.length === 0) {
+                          field.onChange([{ label: 'الكل', value: 'all', fixed: true }])
+                        } else {
+                          field.onChange(selectedOptions.filter((item) => item.value !== 'all'))
+                        }
+                      }}
+                      selectFirstItem={true}
                       defaultOptions={[
                         { label: 'القاهرة', value: '1' },
                         { label: 'الجيزة', value: '2' },

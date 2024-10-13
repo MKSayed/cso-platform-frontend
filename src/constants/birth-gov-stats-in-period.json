@@ -1,0 +1,1494 @@
+{
+  "startDate": "2024-08-01",
+  "endDate": "2024-08-31",
+  "certTypeCode": "birthCert",
+  "certTypeDescr": "وثائق الميلاد",
+  "certTypeCount": 2760545,
+  "govCertType": [
+    {
+      "serial": 1,
+      "govCode": "19",
+      "govDescr": "اﻟﻗﺎﻫره",
+      "govCertTypeCode": "birthCert",
+      "govCertTypeDescr": "اجمالى وثائق الميلاد",
+      "govCertTypeTotalCount": 453403,
+      "certType": [
+        {
+          "certTypeCode": "normalIssued",
+          "certTypeDescr": "مصدرة",
+          "certTypeCount": 421897
+        },
+        {
+          "certTypeCode": "normalRepeated",
+          "certTypeDescr": "معادة",
+          "certTypeCount": 837
+        },
+        {
+          "certTypeCode": "normalCancelled",
+          "certTypeDescr": "ملغي",
+          "certTypeCount": 1984
+        },
+        {
+          "certTypeCode": "normalTotal",
+          "certTypeDescr": "اجمالى عادى",
+          "certTypeCount": 424718
+        },
+        {
+          "certTypeCode": "firstPrinted",
+          "certTypeDescr": "ميلاد برسم",
+          "certTypeCount": 28472
+        },
+        {
+          "certTypeCode": "firstCancelled",
+          "certTypeDescr": "ملغي برسم",
+          "certTypeCount": 213
+        },
+        {
+          "certTypeCode": "firstTotal",
+          "certTypeDescr": "اجمالى برسم",
+          "certTypeCount": 28685
+        },
+        {
+          "certTypeCode": "normalSpecial",
+          "certTypeDescr": "مميز",
+          "certTypeCount": 55867
+        },
+        {
+          "certTypeCode": "firstSpecial",
+          "certTypeDescr": "مميز برسم",
+          "certTypeCount": 5666
+        }
+      ]
+    },
+    {
+      "serial": 2,
+      "govCode": "27",
+      "govDescr": "اﻻﺳﻛﻧدرﻳة",
+      "govCertTypeCode": "birthCert",
+      "govCertTypeDescr": "اجمالى وثائق الميلاد",
+      "govCertTypeTotalCount": 124735,
+      "certType": [
+        {
+          "certTypeCode": "normalIssued",
+          "certTypeDescr": "مصدرة",
+          "certTypeCount": 113308
+        },
+        {
+          "certTypeCode": "normalRepeated",
+          "certTypeDescr": "معادة",
+          "certTypeCount": 390
+        },
+        {
+          "certTypeCode": "normalCancelled",
+          "certTypeDescr": "ملغي",
+          "certTypeCount": 674
+        },
+        {
+          "certTypeCode": "normalTotal",
+          "certTypeDescr": "اجمالى عادى",
+          "certTypeCount": 114372
+        },
+        {
+          "certTypeCode": "firstPrinted",
+          "certTypeDescr": "ميلاد برسم",
+          "certTypeCount": 10257
+        },
+        {
+          "certTypeCode": "firstCancelled",
+          "certTypeDescr": "ملغي برسم",
+          "certTypeCount": 106
+        },
+        {
+          "certTypeCode": "firstTotal",
+          "certTypeDescr": "اجمالى برسم",
+          "certTypeCount": 10363
+        },
+        {
+          "certTypeCode": "normalSpecial",
+          "certTypeDescr": "مميز",
+          "certTypeCount": 22376
+        },
+        {
+          "certTypeCode": "firstSpecial",
+          "certTypeDescr": "مميز برسم",
+          "certTypeCount": 1928
+        }
+      ]
+    },
+    {
+      "serial": 3,
+      "govCode": "35",
+      "govDescr": "ﺑورﺳﻌﻳد",
+      "govCertTypeCode": "birthCert",
+      "govCertTypeDescr": "اجمالى وثائق الميلاد",
+      "govCertTypeTotalCount": 25686,
+      "certType": [
+        {
+          "certTypeCode": "normalIssued",
+          "certTypeDescr": "مصدرة",
+          "certTypeCount": 23989
+        },
+        {
+          "certTypeCode": "normalRepeated",
+          "certTypeDescr": "معادة",
+          "certTypeCount": 3
+        },
+        {
+          "certTypeCode": "normalCancelled",
+          "certTypeDescr": "ملغي",
+          "certTypeCount": 36
+        },
+        {
+          "certTypeCode": "normalTotal",
+          "certTypeDescr": "اجمالى عادى",
+          "certTypeCount": 24028
+        },
+        {
+          "certTypeCode": "firstPrinted",
+          "certTypeDescr": "ميلاد برسم",
+          "certTypeCount": 1650
+        },
+        {
+          "certTypeCode": "firstCancelled",
+          "certTypeDescr": "ملغي برسم",
+          "certTypeCount": 8
+        },
+        {
+          "certTypeCode": "firstTotal",
+          "certTypeDescr": "اجمالى برسم",
+          "certTypeCount": 1658
+        },
+        {
+          "certTypeCode": "normalSpecial",
+          "certTypeDescr": "مميز",
+          "certTypeCount": 2466
+        },
+        {
+          "certTypeCode": "firstSpecial",
+          "certTypeDescr": "مميز برسم",
+          "certTypeCount": 244
+        }
+      ]
+    },
+    {
+      "serial": 4,
+      "govCode": "43",
+      "govDescr": "اﻟﺳوﻳس​",
+      "govCertTypeCode": "birthCert",
+      "govCertTypeDescr": "اجمالى وثائق الميلاد",
+      "govCertTypeTotalCount": 19010,
+      "certType": [
+        {
+          "certTypeCode": "normalIssued",
+          "certTypeDescr": "مصدرة",
+          "certTypeCount": 17441
+        },
+        {
+          "certTypeCode": "normalRepeated",
+          "certTypeDescr": "معادة",
+          "certTypeCount": 8
+        },
+        {
+          "certTypeCode": "normalCancelled",
+          "certTypeDescr": "ملغي",
+          "certTypeCount": 97
+        },
+        {
+          "certTypeCode": "normalTotal",
+          "certTypeDescr": "اجمالى عادى",
+          "certTypeCount": 17546
+        },
+        {
+          "certTypeCode": "firstPrinted",
+          "certTypeDescr": "ميلاد برسم",
+          "certTypeCount": 1445
+        },
+        {
+          "certTypeCode": "firstCancelled",
+          "certTypeDescr": "ملغي برسم",
+          "certTypeCount": 19
+        },
+        {
+          "certTypeCode": "firstTotal",
+          "certTypeDescr": "اجمالى برسم",
+          "certTypeCount": 1464
+        },
+        {
+          "certTypeCode": "normalSpecial",
+          "certTypeDescr": "مميز",
+          "certTypeCount": 5190
+        },
+        {
+          "certTypeCode": "firstSpecial",
+          "certTypeDescr": "مميز برسم",
+          "certTypeCount": 598
+        }
+      ]
+    },
+    {
+      "serial": 5,
+      "govCode": "51",
+      "govDescr": "دﻣﻳﺎط",
+      "govCertTypeCode": "birthCert",
+      "govCertTypeDescr": "اجمالى وثائق الميلاد",
+      "govCertTypeTotalCount": 53139,
+      "certType": [
+        {
+          "certTypeCode": "normalIssued",
+          "certTypeDescr": "مصدرة",
+          "certTypeCount": 48015
+        },
+        {
+          "certTypeCode": "normalRepeated",
+          "certTypeDescr": "معادة",
+          "certTypeCount": 216
+        },
+        {
+          "certTypeCode": "normalCancelled",
+          "certTypeDescr": "ملغي",
+          "certTypeCount": 345
+        },
+        {
+          "certTypeCode": "normalTotal",
+          "certTypeDescr": "اجمالى عادى",
+          "certTypeCount": 48576
+        },
+        {
+          "certTypeCode": "firstPrinted",
+          "certTypeDescr": "ميلاد برسم",
+          "certTypeCount": 4529
+        },
+        {
+          "certTypeCode": "firstCancelled",
+          "certTypeDescr": "ملغي برسم",
+          "certTypeCount": 34
+        },
+        {
+          "certTypeCode": "firstTotal",
+          "certTypeDescr": "اجمالى برسم",
+          "certTypeCount": 4563
+        },
+        {
+          "certTypeCode": "normalSpecial",
+          "certTypeDescr": "مميز",
+          "certTypeCount": 38
+        },
+        {
+          "certTypeCode": "firstSpecial",
+          "certTypeDescr": "مميز برسم",
+          "certTypeCount": 10
+        }
+      ]
+    },
+    {
+      "serial": 6,
+      "govCode": "61",
+      "govDescr": "اﻟدﻗﻬﻟﻳة",
+      "govCertTypeCode": "birthCert",
+      "govCertTypeDescr": "اجمالى وثائق الميلاد",
+      "govCertTypeTotalCount": 220553,
+      "certType": [
+        {
+          "certTypeCode": "normalIssued",
+          "certTypeDescr": "مصدرة",
+          "certTypeCount": 201824
+        },
+        {
+          "certTypeCode": "normalRepeated",
+          "certTypeDescr": "معادة",
+          "certTypeCount": 369
+        },
+        {
+          "certTypeCode": "normalCancelled",
+          "certTypeDescr": "ملغي",
+          "certTypeCount": 1169
+        },
+        {
+          "certTypeCode": "normalTotal",
+          "certTypeDescr": "اجمالى عادى",
+          "certTypeCount": 203362
+        },
+        {
+          "certTypeCode": "firstPrinted",
+          "certTypeDescr": "ميلاد برسم",
+          "certTypeCount": 17090
+        },
+        {
+          "certTypeCode": "firstCancelled",
+          "certTypeDescr": "ملغي برسم",
+          "certTypeCount": 101
+        },
+        {
+          "certTypeCode": "firstTotal",
+          "certTypeDescr": "اجمالى برسم",
+          "certTypeCount": 17191
+        },
+        {
+          "certTypeCode": "normalSpecial",
+          "certTypeDescr": "مميز",
+          "certTypeCount": 6161
+        },
+        {
+          "certTypeCode": "firstSpecial",
+          "certTypeDescr": "مميز برسم",
+          "certTypeCount": 495
+        }
+      ]
+    },
+    {
+      "serial": 7,
+      "govCode": "78",
+      "govDescr": "اﻟﺷرﻗﻳة",
+      "govCertTypeCode": "birthCert",
+      "govCertTypeDescr": "اجمالى وثائق الميلاد",
+      "govCertTypeTotalCount": 203844,
+      "certType": [
+        {
+          "certTypeCode": "normalIssued",
+          "certTypeDescr": "مصدرة",
+          "certTypeCount": 184931
+        },
+        {
+          "certTypeCode": "normalRepeated",
+          "certTypeDescr": "معادة",
+          "certTypeCount": 271
+        },
+        {
+          "certTypeCode": "normalCancelled",
+          "certTypeDescr": "ملغي",
+          "certTypeCount": 886
+        },
+        {
+          "certTypeCode": "normalTotal",
+          "certTypeDescr": "اجمالى عادى",
+          "certTypeCount": 186088
+        },
+        {
+          "certTypeCode": "firstPrinted",
+          "certTypeDescr": "ميلاد برسم",
+          "certTypeCount": 17497
+        },
+        {
+          "certTypeCode": "firstCancelled",
+          "certTypeDescr": "ملغي برسم",
+          "certTypeCount": 259
+        },
+        {
+          "certTypeCode": "firstTotal",
+          "certTypeDescr": "اجمالى برسم",
+          "certTypeCount": 17756
+        },
+        {
+          "certTypeCode": "normalSpecial",
+          "certTypeDescr": "مميز",
+          "certTypeCount": 5463
+        },
+        {
+          "certTypeCode": "firstSpecial",
+          "certTypeDescr": "مميز برسم",
+          "certTypeCount": 442
+        }
+      ]
+    },
+    {
+      "serial": 8,
+      "govCode": "86",
+      "govDescr": "اﻟﻗﻟﻳوﺑﻳة",
+      "govCertTypeCode": "birthCert",
+      "govCertTypeDescr": "اجمالى وثائق الميلاد",
+      "govCertTypeTotalCount": 143632,
+      "certType": [
+        {
+          "certTypeCode": "normalIssued",
+          "certTypeDescr": "مصدرة",
+          "certTypeCount": 129624
+        },
+        {
+          "certTypeCode": "normalRepeated",
+          "certTypeDescr": "معادة",
+          "certTypeCount": 275
+        },
+        {
+          "certTypeCode": "normalCancelled",
+          "certTypeDescr": "ملغي",
+          "certTypeCount": 1277
+        },
+        {
+          "certTypeCode": "normalTotal",
+          "certTypeDescr": "اجمالى عادى",
+          "certTypeCount": 131176
+        },
+        {
+          "certTypeCode": "firstPrinted",
+          "certTypeDescr": "ميلاد برسم",
+          "certTypeCount": 12216
+        },
+        {
+          "certTypeCode": "firstCancelled",
+          "certTypeDescr": "ملغي برسم",
+          "certTypeCount": 240
+        },
+        {
+          "certTypeCode": "firstTotal",
+          "certTypeDescr": "اجمالى برسم",
+          "certTypeCount": 12456
+        },
+        {
+          "certTypeCode": "normalSpecial",
+          "certTypeDescr": "مميز",
+          "certTypeCount": 4209
+        },
+        {
+          "certTypeCode": "firstSpecial",
+          "certTypeDescr": "مميز برسم",
+          "certTypeCount": 374
+        }
+      ]
+    },
+    {
+      "serial": 9,
+      "govCode": "94",
+      "govDescr": "ﻛﻓر اﻟﺷﻳخ",
+      "govCertTypeCode": "birthCert",
+      "govCertTypeDescr": "اجمالى وثائق الميلاد",
+      "govCertTypeTotalCount": 96394,
+      "certType": [
+        {
+          "certTypeCode": "normalIssued",
+          "certTypeDescr": "مصدرة",
+          "certTypeCount": 86319
+        },
+        {
+          "certTypeCode": "normalRepeated",
+          "certTypeDescr": "معادة",
+          "certTypeCount": 157
+        },
+        {
+          "certTypeCode": "normalCancelled",
+          "certTypeDescr": "ملغي",
+          "certTypeCount": 775
+        },
+        {
+          "certTypeCode": "normalTotal",
+          "certTypeDescr": "اجمالى عادى",
+          "certTypeCount": 87251
+        },
+        {
+          "certTypeCode": "firstPrinted",
+          "certTypeDescr": "ميلاد برسم",
+          "certTypeCount": 9030
+        },
+        {
+          "certTypeCode": "firstCancelled",
+          "certTypeDescr": "ملغي برسم",
+          "certTypeCount": 113
+        },
+        {
+          "certTypeCode": "firstTotal",
+          "certTypeDescr": "اجمالى برسم",
+          "certTypeCount": 9143
+        },
+        {
+          "certTypeCode": "normalSpecial",
+          "certTypeDescr": "مميز",
+          "certTypeCount": 224
+        },
+        {
+          "certTypeCode": "firstSpecial",
+          "certTypeDescr": "مميز برسم",
+          "certTypeCount": 33
+        }
+      ]
+    },
+    {
+      "serial": 10,
+      "govCode": "108",
+      "govDescr": "اﻟﻐرﺑﻳة",
+      "govCertTypeCode": "birthCert",
+      "govCertTypeDescr": "اجمالى وثائق الميلاد",
+      "govCertTypeTotalCount": 151682,
+      "certType": [
+        {
+          "certTypeCode": "normalIssued",
+          "certTypeDescr": "مصدرة",
+          "certTypeCount": 136313
+        },
+        {
+          "certTypeCode": "normalRepeated",
+          "certTypeDescr": "معادة",
+          "certTypeCount": 513
+        },
+        {
+          "certTypeCode": "normalCancelled",
+          "certTypeDescr": "ملغي",
+          "certTypeCount": 1914
+        },
+        {
+          "certTypeCode": "normalTotal",
+          "certTypeDescr": "اجمالى عادى",
+          "certTypeCount": 138740
+        },
+        {
+          "certTypeCode": "firstPrinted",
+          "certTypeDescr": "ميلاد برسم",
+          "certTypeCount": 12552
+        },
+        {
+          "certTypeCode": "firstCancelled",
+          "certTypeDescr": "ملغي برسم",
+          "certTypeCount": 390
+        },
+        {
+          "certTypeCode": "firstTotal",
+          "certTypeDescr": "اجمالى برسم",
+          "certTypeCount": 12942
+        },
+        {
+          "certTypeCode": "normalSpecial",
+          "certTypeDescr": "مميز",
+          "certTypeCount": 2362
+        },
+        {
+          "certTypeCode": "firstSpecial",
+          "certTypeDescr": "مميز برسم",
+          "certTypeCount": 254
+        }
+      ]
+    },
+    {
+      "serial": 11,
+      "govCode": "116",
+      "govDescr": "اﻟﻣﻧوﻓﻳة",
+      "govCertTypeCode": "birthCert",
+      "govCertTypeDescr": "اجمالى وثائق الميلاد",
+      "govCertTypeTotalCount": 117165,
+      "certType": [
+        {
+          "certTypeCode": "normalIssued",
+          "certTypeDescr": "مصدرة",
+          "certTypeCount": 105081
+        },
+        {
+          "certTypeCode": "normalRepeated",
+          "certTypeDescr": "معادة",
+          "certTypeCount": 357
+        },
+        {
+          "certTypeCode": "normalCancelled",
+          "certTypeDescr": "ملغي",
+          "certTypeCount": 863
+        },
+        {
+          "certTypeCode": "normalTotal",
+          "certTypeDescr": "اجمالى عادى",
+          "certTypeCount": 106301
+        },
+        {
+          "certTypeCode": "firstPrinted",
+          "certTypeDescr": "ميلاد برسم",
+          "certTypeCount": 10665
+        },
+        {
+          "certTypeCode": "firstCancelled",
+          "certTypeDescr": "ملغي برسم",
+          "certTypeCount": 199
+        },
+        {
+          "certTypeCode": "firstTotal",
+          "certTypeDescr": "اجمالى برسم",
+          "certTypeCount": 10864
+        },
+        {
+          "certTypeCode": "normalSpecial",
+          "certTypeDescr": "مميز",
+          "certTypeCount": 1258
+        },
+        {
+          "certTypeCode": "firstSpecial",
+          "certTypeDescr": "مميز برسم",
+          "certTypeCount": 159
+        }
+      ]
+    },
+    {
+      "serial": 12,
+      "govCode": "124",
+      "govDescr": "اﻟﺑﺣﻳرة",
+      "govCertTypeCode": "birthCert",
+      "govCertTypeDescr": "اجمالى وثائق الميلاد",
+      "govCertTypeTotalCount": 151975,
+      "certType": [
+        {
+          "certTypeCode": "normalIssued",
+          "certTypeDescr": "مصدرة",
+          "certTypeCount": 132090
+        },
+        {
+          "certTypeCode": "normalRepeated",
+          "certTypeDescr": "معادة",
+          "certTypeCount": 253
+        },
+        {
+          "certTypeCode": "normalCancelled",
+          "certTypeDescr": "ملغي",
+          "certTypeCount": 1012
+        },
+        {
+          "certTypeCode": "normalTotal",
+          "certTypeDescr": "اجمالى عادى",
+          "certTypeCount": 133355
+        },
+        {
+          "certTypeCode": "firstPrinted",
+          "certTypeDescr": "ميلاد برسم",
+          "certTypeCount": 18418
+        },
+        {
+          "certTypeCode": "firstCancelled",
+          "certTypeDescr": "ملغي برسم",
+          "certTypeCount": 202
+        },
+        {
+          "certTypeCode": "firstTotal",
+          "certTypeDescr": "اجمالى برسم",
+          "certTypeCount": 18620
+        },
+        {
+          "certTypeCode": "normalSpecial",
+          "certTypeDescr": "مميز",
+          "certTypeCount": 4893
+        },
+        {
+          "certTypeCode": "firstSpecial",
+          "certTypeDescr": "مميز برسم",
+          "certTypeCount": 771
+        }
+      ]
+    },
+    {
+      "serial": 13,
+      "govCode": "132",
+      "govDescr": "اﻻﺳﻣﺎﻋﻳﻟﻳة",
+      "govCertTypeCode": "birthCert",
+      "govCertTypeDescr": "اجمالى وثائق الميلاد",
+      "govCertTypeTotalCount": 44247,
+      "certType": [
+        {
+          "certTypeCode": "normalIssued",
+          "certTypeDescr": "مصدرة",
+          "certTypeCount": 40506
+        },
+        {
+          "certTypeCode": "normalRepeated",
+          "certTypeDescr": "معادة",
+          "certTypeCount": 66
+        },
+        {
+          "certTypeCode": "normalCancelled",
+          "certTypeDescr": "ملغي",
+          "certTypeCount": 221
+        },
+        {
+          "certTypeCode": "normalTotal",
+          "certTypeDescr": "اجمالى عادى",
+          "certTypeCount": 40793
+        },
+        {
+          "certTypeCode": "firstPrinted",
+          "certTypeDescr": "ميلاد برسم",
+          "certTypeCount": 3436
+        },
+        {
+          "certTypeCode": "firstCancelled",
+          "certTypeDescr": "ملغي برسم",
+          "certTypeCount": 18
+        },
+        {
+          "certTypeCode": "firstTotal",
+          "certTypeDescr": "اجمالى برسم",
+          "certTypeCount": 3454
+        },
+        {
+          "certTypeCode": "normalSpecial",
+          "certTypeDescr": "مميز",
+          "certTypeCount": 6566
+        },
+        {
+          "certTypeCode": "firstSpecial",
+          "certTypeDescr": "مميز برسم",
+          "certTypeCount": 680
+        }
+      ]
+    },
+    {
+      "serial": 14,
+      "govCode": "141",
+      "govDescr": "اﻟﺟﻳزه",
+      "govCertTypeCode": "birthCert",
+      "govCertTypeDescr": "اجمالى وثائق الميلاد",
+      "govCertTypeTotalCount": 230579,
+      "certType": [
+        {
+          "certTypeCode": "normalIssued",
+          "certTypeDescr": "مصدرة",
+          "certTypeCount": 211387
+        },
+        {
+          "certTypeCode": "normalRepeated",
+          "certTypeDescr": "معادة",
+          "certTypeCount": 288
+        },
+        {
+          "certTypeCode": "normalCancelled",
+          "certTypeDescr": "ملغي",
+          "certTypeCount": 549
+        },
+        {
+          "certTypeCode": "normalTotal",
+          "certTypeDescr": "اجمالى عادى",
+          "certTypeCount": 212224
+        },
+        {
+          "certTypeCode": "firstPrinted",
+          "certTypeDescr": "ميلاد برسم",
+          "certTypeCount": 18296
+        },
+        {
+          "certTypeCode": "firstCancelled",
+          "certTypeDescr": "ملغي برسم",
+          "certTypeCount": 59
+        },
+        {
+          "certTypeCode": "firstTotal",
+          "certTypeDescr": "اجمالى برسم",
+          "certTypeCount": 18355
+        },
+        {
+          "certTypeCode": "normalSpecial",
+          "certTypeDescr": "مميز",
+          "certTypeCount": 11098
+        },
+        {
+          "certTypeCode": "firstSpecial",
+          "certTypeDescr": "مميز برسم",
+          "certTypeCount": 813
+        }
+      ]
+    },
+    {
+      "serial": 15,
+      "govCode": "159",
+      "govDescr": "ﺑﻧﻰ ﺳوﻳف",
+      "govCertTypeCode": "birthCert",
+      "govCertTypeDescr": "اجمالى وثائق الميلاد",
+      "govCertTypeTotalCount": 71044,
+      "certType": [
+        {
+          "certTypeCode": "normalIssued",
+          "certTypeDescr": "مصدرة",
+          "certTypeCount": 62069
+        },
+        {
+          "certTypeCode": "normalRepeated",
+          "certTypeDescr": "معادة",
+          "certTypeCount": 75
+        },
+        {
+          "certTypeCode": "normalCancelled",
+          "certTypeDescr": "ملغي",
+          "certTypeCount": 253
+        },
+        {
+          "certTypeCode": "normalTotal",
+          "certTypeDescr": "اجمالى عادى",
+          "certTypeCount": 62397
+        },
+        {
+          "certTypeCode": "firstPrinted",
+          "certTypeDescr": "ميلاد برسم",
+          "certTypeCount": 8578
+        },
+        {
+          "certTypeCode": "firstCancelled",
+          "certTypeDescr": "ملغي برسم",
+          "certTypeCount": 69
+        },
+        {
+          "certTypeCode": "firstTotal",
+          "certTypeDescr": "اجمالى برسم",
+          "certTypeCount": 8647
+        },
+        {
+          "certTypeCode": "normalSpecial",
+          "certTypeDescr": "مميز",
+          "certTypeCount": 5507
+        },
+        {
+          "certTypeCode": "firstSpecial",
+          "certTypeDescr": "مميز برسم",
+          "certTypeCount": 667
+        }
+      ]
+    },
+    {
+      "serial": 16,
+      "govCode": "167",
+      "govDescr": "اﻟﻓﻳوم",
+      "govCertTypeCode": "birthCert",
+      "govCertTypeDescr": "اجمالى وثائق الميلاد",
+      "govCertTypeTotalCount": 76366,
+      "certType": [
+        {
+          "certTypeCode": "normalIssued",
+          "certTypeDescr": "مصدرة",
+          "certTypeCount": 64893
+        },
+        {
+          "certTypeCode": "normalRepeated",
+          "certTypeDescr": "معادة",
+          "certTypeCount": 375
+        },
+        {
+          "certTypeCode": "normalCancelled",
+          "certTypeDescr": "ملغي",
+          "certTypeCount": 751
+        },
+        {
+          "certTypeCode": "normalTotal",
+          "certTypeDescr": "اجمالى عادى",
+          "certTypeCount": 66019
+        },
+        {
+          "certTypeCode": "firstPrinted",
+          "certTypeDescr": "ميلاد برسم",
+          "certTypeCount": 10248
+        },
+        {
+          "certTypeCode": "firstCancelled",
+          "certTypeDescr": "ملغي برسم",
+          "certTypeCount": 99
+        },
+        {
+          "certTypeCode": "firstTotal",
+          "certTypeDescr": "اجمالى برسم",
+          "certTypeCount": 10347
+        },
+        {
+          "certTypeCode": "normalSpecial",
+          "certTypeDescr": "مميز",
+          "certTypeCount": 3610
+        },
+        {
+          "certTypeCode": "firstSpecial",
+          "certTypeDescr": "مميز برسم",
+          "certTypeCount": 540
+        }
+      ]
+    },
+    {
+      "serial": 17,
+      "govCode": "175",
+      "govDescr": "اﻟﻣﻧﻳﺎ",
+      "govCertTypeCode": "birthCert",
+      "govCertTypeDescr": "اجمالى وثائق الميلاد",
+      "govCertTypeTotalCount": 131429,
+      "certType": [
+        {
+          "certTypeCode": "normalIssued",
+          "certTypeDescr": "مصدرة",
+          "certTypeCount": 110471
+        },
+        {
+          "certTypeCode": "normalRepeated",
+          "certTypeDescr": "معادة",
+          "certTypeCount": 758
+        },
+        {
+          "certTypeCode": "normalCancelled",
+          "certTypeDescr": "ملغي",
+          "certTypeCount": 1179
+        },
+        {
+          "certTypeCode": "normalTotal",
+          "certTypeDescr": "اجمالى عادى",
+          "certTypeCount": 112408
+        },
+        {
+          "certTypeCode": "firstPrinted",
+          "certTypeDescr": "ميلاد برسم",
+          "certTypeCount": 18858
+        },
+        {
+          "certTypeCode": "firstCancelled",
+          "certTypeDescr": "ملغي برسم",
+          "certTypeCount": 163
+        },
+        {
+          "certTypeCode": "firstTotal",
+          "certTypeDescr": "اجمالى برسم",
+          "certTypeCount": 19021
+        },
+        {
+          "certTypeCode": "normalSpecial",
+          "certTypeDescr": "مميز",
+          "certTypeCount": 1193
+        },
+        {
+          "certTypeCode": "firstSpecial",
+          "certTypeDescr": "مميز برسم",
+          "certTypeCount": 181
+        }
+      ]
+    },
+    {
+      "serial": 18,
+      "govCode": "183",
+      "govDescr": "اﺳﻳوط",
+      "govCertTypeCode": "birthCert",
+      "govCertTypeDescr": "اجمالى وثائق الميلاد",
+      "govCertTypeTotalCount": 110578,
+      "certType": [
+        {
+          "certTypeCode": "normalIssued",
+          "certTypeDescr": "مصدرة",
+          "certTypeCount": 96666
+        },
+        {
+          "certTypeCode": "normalRepeated",
+          "certTypeDescr": "معادة",
+          "certTypeCount": 333
+        },
+        {
+          "certTypeCode": "normalCancelled",
+          "certTypeDescr": "ملغي",
+          "certTypeCount": 501
+        },
+        {
+          "certTypeCode": "normalTotal",
+          "certTypeDescr": "اجمالى عادى",
+          "certTypeCount": 97500
+        },
+        {
+          "certTypeCode": "firstPrinted",
+          "certTypeDescr": "ميلاد برسم",
+          "certTypeCount": 12998
+        },
+        {
+          "certTypeCode": "firstCancelled",
+          "certTypeDescr": "ملغي برسم",
+          "certTypeCount": 80
+        },
+        {
+          "certTypeCode": "firstTotal",
+          "certTypeDescr": "اجمالى برسم",
+          "certTypeCount": 13078
+        },
+        {
+          "certTypeCode": "normalSpecial",
+          "certTypeDescr": "مميز",
+          "certTypeCount": 470
+        },
+        {
+          "certTypeCode": "firstSpecial",
+          "certTypeDescr": "مميز برسم",
+          "certTypeCount": 39
+        }
+      ]
+    },
+    {
+      "serial": 19,
+      "govCode": "191",
+      "govDescr": "ﺳوﻫﺎج",
+      "govCertTypeCode": "birthCert",
+      "govCertTypeDescr": "اجمالى وثائق الميلاد",
+      "govCertTypeTotalCount": 120353,
+      "certType": [
+        {
+          "certTypeCode": "normalIssued",
+          "certTypeDescr": "مصدرة",
+          "certTypeCount": 101685
+        },
+        {
+          "certTypeCode": "normalRepeated",
+          "certTypeDescr": "معادة",
+          "certTypeCount": 61
+        },
+        {
+          "certTypeCode": "normalCancelled",
+          "certTypeDescr": "ملغي",
+          "certTypeCount": 335
+        },
+        {
+          "certTypeCode": "normalTotal",
+          "certTypeDescr": "اجمالى عادى",
+          "certTypeCount": 102081
+        },
+        {
+          "certTypeCode": "firstPrinted",
+          "certTypeDescr": "ميلاد برسم",
+          "certTypeCount": 18143
+        },
+        {
+          "certTypeCode": "firstCancelled",
+          "certTypeDescr": "ملغي برسم",
+          "certTypeCount": 129
+        },
+        {
+          "certTypeCode": "firstTotal",
+          "certTypeDescr": "اجمالى برسم",
+          "certTypeCount": 18272
+        },
+        {
+          "certTypeCode": "normalSpecial",
+          "certTypeDescr": "مميز",
+          "certTypeCount": 4176
+        },
+        {
+          "certTypeCode": "firstSpecial",
+          "certTypeDescr": "مميز برسم",
+          "certTypeCount": 886
+        }
+      ]
+    },
+    {
+      "serial": 20,
+      "govCode": "205",
+      "govDescr": "ﻗﻧﺎ",
+      "govCertTypeCode": "birthCert",
+      "govCertTypeDescr": "اجمالى وثائق الميلاد",
+      "govCertTypeTotalCount": 73361,
+      "certType": [
+        {
+          "certTypeCode": "normalIssued",
+          "certTypeDescr": "مصدرة",
+          "certTypeCount": 61716
+        },
+        {
+          "certTypeCode": "normalRepeated",
+          "certTypeDescr": "معادة",
+          "certTypeCount": 142
+        },
+        {
+          "certTypeCode": "normalCancelled",
+          "certTypeDescr": "ملغي",
+          "certTypeCount": 706
+        },
+        {
+          "certTypeCode": "normalTotal",
+          "certTypeDescr": "اجمالى عادى",
+          "certTypeCount": 62564
+        },
+        {
+          "certTypeCode": "firstPrinted",
+          "certTypeDescr": "ميلاد برسم",
+          "certTypeCount": 10680
+        },
+        {
+          "certTypeCode": "firstCancelled",
+          "certTypeDescr": "ملغي برسم",
+          "certTypeCount": 117
+        },
+        {
+          "certTypeCode": "firstTotal",
+          "certTypeDescr": "اجمالى برسم",
+          "certTypeCount": 10797
+        },
+        {
+          "certTypeCode": "normalSpecial",
+          "certTypeDescr": "مميز",
+          "certTypeCount": 257
+        },
+        {
+          "certTypeCode": "firstSpecial",
+          "certTypeDescr": "مميز برسم",
+          "certTypeCount": 40
+        }
+      ]
+    },
+    {
+      "serial": 21,
+      "govCode": "213",
+      "govDescr": "أﺳوان",
+      "govCertTypeCode": "birthCert",
+      "govCertTypeDescr": "اجمالى وثائق الميلاد",
+      "govCertTypeTotalCount": 32422,
+      "certType": [
+        {
+          "certTypeCode": "normalIssued",
+          "certTypeDescr": "مصدرة",
+          "certTypeCount": 27634
+        },
+        {
+          "certTypeCode": "normalRepeated",
+          "certTypeDescr": "معادة",
+          "certTypeCount": 17
+        },
+        {
+          "certTypeCode": "normalCancelled",
+          "certTypeDescr": "ملغي",
+          "certTypeCount": 252
+        },
+        {
+          "certTypeCode": "normalTotal",
+          "certTypeDescr": "اجمالى عادى",
+          "certTypeCount": 27903
+        },
+        {
+          "certTypeCode": "firstPrinted",
+          "certTypeDescr": "ميلاد برسم",
+          "certTypeCount": 4451
+        },
+        {
+          "certTypeCode": "firstCancelled",
+          "certTypeDescr": "ملغي برسم",
+          "certTypeCount": 68
+        },
+        {
+          "certTypeCode": "firstTotal",
+          "certTypeDescr": "اجمالى برسم",
+          "certTypeCount": 4519
+        },
+        {
+          "certTypeCode": "normalSpecial",
+          "certTypeDescr": "مميز",
+          "certTypeCount": 692
+        },
+        {
+          "certTypeCode": "firstSpecial",
+          "certTypeDescr": "مميز برسم",
+          "certTypeCount": 83
+        }
+      ]
+    },
+    {
+      "serial": 22,
+      "govCode": "221",
+      "govDescr": "اﻟﺑﺣر اﻻﺣﻣر",
+      "govCertTypeCode": "birthCert",
+      "govCertTypeDescr": "اجمالى وثائق الميلاد",
+      "govCertTypeTotalCount": 20809,
+      "certType": [
+        {
+          "certTypeCode": "normalIssued",
+          "certTypeDescr": "مصدرة",
+          "certTypeCount": 19058
+        },
+        {
+          "certTypeCode": "normalRepeated",
+          "certTypeDescr": "معادة",
+          "certTypeCount": 4
+        },
+        {
+          "certTypeCode": "normalCancelled",
+          "certTypeDescr": "ملغي",
+          "certTypeCount": 67
+        },
+        {
+          "certTypeCode": "normalTotal",
+          "certTypeDescr": "اجمالى عادى",
+          "certTypeCount": 19129
+        },
+        {
+          "certTypeCode": "firstPrinted",
+          "certTypeDescr": "ميلاد برسم",
+          "certTypeCount": 1661
+        },
+        {
+          "certTypeCode": "firstCancelled",
+          "certTypeDescr": "ملغي برسم",
+          "certTypeCount": 19
+        },
+        {
+          "certTypeCode": "firstTotal",
+          "certTypeDescr": "اجمالى برسم",
+          "certTypeCount": 1680
+        },
+        {
+          "certTypeCode": "normalSpecial",
+          "certTypeDescr": "مميز",
+          "certTypeCount": 1245
+        },
+        {
+          "certTypeCode": "firstSpecial",
+          "certTypeDescr": "مميز برسم",
+          "certTypeCount": 121
+        }
+      ]
+    },
+    {
+      "serial": 23,
+      "govCode": "231",
+      "govDescr": "اﻟوادى اﻟﺟدﻳد",
+      "govCertTypeCode": "birthCert",
+      "govCertTypeDescr": "اجمالى وثائق الميلاد",
+      "govCertTypeTotalCount": 7842,
+      "certType": [
+        {
+          "certTypeCode": "normalIssued",
+          "certTypeDescr": "مصدرة",
+          "certTypeCount": 6656
+        },
+        {
+          "certTypeCode": "normalRepeated",
+          "certTypeDescr": "معادة",
+          "certTypeCount": 2
+        },
+        {
+          "certTypeCode": "normalCancelled",
+          "certTypeDescr": "ملغي",
+          "certTypeCount": 44
+        },
+        {
+          "certTypeCode": "normalTotal",
+          "certTypeDescr": "اجمالى عادى",
+          "certTypeCount": 6702
+        },
+        {
+          "certTypeCode": "firstPrinted",
+          "certTypeDescr": "ميلاد برسم",
+          "certTypeCount": 1123
+        },
+        {
+          "certTypeCode": "firstCancelled",
+          "certTypeDescr": "ملغي برسم",
+          "certTypeCount": 17
+        },
+        {
+          "certTypeCode": "firstTotal",
+          "certTypeDescr": "اجمالى برسم",
+          "certTypeCount": 1140
+        },
+        {
+          "certTypeCode": "normalSpecial",
+          "certTypeDescr": "مميز",
+          "certTypeCount": 0
+        },
+        {
+          "certTypeCode": "firstSpecial",
+          "certTypeDescr": "مميز برسم",
+          "certTypeCount": 0
+        }
+      ]
+    },
+    {
+      "serial": 24,
+      "govCode": "248",
+      "govDescr": "ﻣﺣﺎﻓظة ﻣطروح",
+      "govCertTypeCode": "birthCert",
+      "govCertTypeDescr": "اجمالى وثائق الميلاد",
+      "govCertTypeTotalCount": 21471,
+      "certType": [
+        {
+          "certTypeCode": "normalIssued",
+          "certTypeDescr": "مصدرة",
+          "certTypeCount": 17865
+        },
+        {
+          "certTypeCode": "normalRepeated",
+          "certTypeDescr": "معادة",
+          "certTypeCount": 54
+        },
+        {
+          "certTypeCode": "normalCancelled",
+          "certTypeDescr": "ملغي",
+          "certTypeCount": 162
+        },
+        {
+          "certTypeCode": "normalTotal",
+          "certTypeDescr": "اجمالى عادى",
+          "certTypeCount": 18081
+        },
+        {
+          "certTypeCode": "firstPrinted",
+          "certTypeDescr": "ميلاد برسم",
+          "certTypeCount": 3371
+        },
+        {
+          "certTypeCode": "firstCancelled",
+          "certTypeDescr": "ملغي برسم",
+          "certTypeCount": 19
+        },
+        {
+          "certTypeCode": "firstTotal",
+          "certTypeDescr": "اجمالى برسم",
+          "certTypeCount": 3390
+        },
+        {
+          "certTypeCode": "normalSpecial",
+          "certTypeDescr": "مميز",
+          "certTypeCount": 0
+        },
+        {
+          "certTypeCode": "firstSpecial",
+          "certTypeDescr": "مميز برسم",
+          "certTypeCount": 0
+        }
+      ]
+    },
+    {
+      "serial": 25,
+      "govCode": "256",
+      "govDescr": "ﺷﻣﺎل ﺳﻳﻧﺎء",
+      "govCertTypeCode": "birthCert",
+      "govCertTypeDescr": "اجمالى وثائق الميلاد",
+      "govCertTypeTotalCount": 20625,
+      "certType": [
+        {
+          "certTypeCode": "normalIssued",
+          "certTypeDescr": "مصدرة",
+          "certTypeCount": 19224
+        },
+        {
+          "certTypeCode": "normalRepeated",
+          "certTypeDescr": "معادة",
+          "certTypeCount": 1
+        },
+        {
+          "certTypeCode": "normalCancelled",
+          "certTypeDescr": "ملغي",
+          "certTypeCount": 123
+        },
+        {
+          "certTypeCode": "normalTotal",
+          "certTypeDescr": "اجمالى عادى",
+          "certTypeCount": 19348
+        },
+        {
+          "certTypeCode": "firstPrinted",
+          "certTypeDescr": "ميلاد برسم",
+          "certTypeCount": 1267
+        },
+        {
+          "certTypeCode": "firstCancelled",
+          "certTypeDescr": "ملغي برسم",
+          "certTypeCount": 10
+        },
+        {
+          "certTypeCode": "firstTotal",
+          "certTypeDescr": "اجمالى برسم",
+          "certTypeCount": 1277
+        },
+        {
+          "certTypeCode": "normalSpecial",
+          "certTypeDescr": "مميز",
+          "certTypeCount": 0
+        },
+        {
+          "certTypeCode": "firstSpecial",
+          "certTypeDescr": "مميز برسم",
+          "certTypeCount": 0
+        }
+      ]
+    },
+    {
+      "serial": 26,
+      "govCode": "264",
+      "govDescr": "ﺟﻧوب ﺳﻳﻧﺎء",
+      "govCertTypeCode": "birthCert",
+      "govCertTypeDescr": "اجمالى وثائق الميلاد",
+      "govCertTypeTotalCount": 8695,
+      "certType": [
+        {
+          "certTypeCode": "normalIssued",
+          "certTypeDescr": "مصدرة",
+          "certTypeCount": 8003
+        },
+        {
+          "certTypeCode": "normalRepeated",
+          "certTypeDescr": "معادة",
+          "certTypeCount": 0
+        },
+        {
+          "certTypeCode": "normalCancelled",
+          "certTypeDescr": "ملغي",
+          "certTypeCount": 36
+        },
+        {
+          "certTypeCode": "normalTotal",
+          "certTypeDescr": "اجمالى عادى",
+          "certTypeCount": 8039
+        },
+        {
+          "certTypeCode": "firstPrinted",
+          "certTypeDescr": "ميلاد برسم",
+          "certTypeCount": 650
+        },
+        {
+          "certTypeCode": "firstCancelled",
+          "certTypeDescr": "ملغي برسم",
+          "certTypeCount": 6
+        },
+        {
+          "certTypeCode": "firstTotal",
+          "certTypeDescr": "اجمالى برسم",
+          "certTypeCount": 656
+        },
+        {
+          "certTypeCode": "normalSpecial",
+          "certTypeDescr": "مميز",
+          "certTypeCount": 66
+        },
+        {
+          "certTypeCode": "firstSpecial",
+          "certTypeDescr": "مميز برسم",
+          "certTypeCount": 0
+        }
+      ]
+    },
+    {
+      "serial": 29,
+      "govCode": "311",
+      "govDescr": "اﻷﻗﺻر",
+      "govCertTypeCode": "birthCert",
+      "govCertTypeDescr": "اجمالى وثائق الميلاد",
+      "govCertTypeTotalCount": 29506,
+      "certType": [
+        {
+          "certTypeCode": "normalIssued",
+          "certTypeDescr": "مصدرة",
+          "certTypeCount": 25633
+        },
+        {
+          "certTypeCode": "normalRepeated",
+          "certTypeDescr": "معادة",
+          "certTypeCount": 31
+        },
+        {
+          "certTypeCode": "normalCancelled",
+          "certTypeDescr": "ملغي",
+          "certTypeCount": 233
+        },
+        {
+          "certTypeCode": "normalTotal",
+          "certTypeDescr": "اجمالى عادى",
+          "certTypeCount": 25897
+        },
+        {
+          "certTypeCode": "firstPrinted",
+          "certTypeDescr": "ميلاد برسم",
+          "certTypeCount": 3551
+        },
+        {
+          "certTypeCode": "firstCancelled",
+          "certTypeDescr": "ملغي برسم",
+          "certTypeCount": 58
+        },
+        {
+          "certTypeCode": "firstTotal",
+          "certTypeDescr": "اجمالى برسم",
+          "certTypeCount": 3609
+        },
+        {
+          "certTypeCode": "normalSpecial",
+          "certTypeDescr": "مميز",
+          "certTypeCount": 193
+        },
+        {
+          "certTypeCode": "firstSpecial",
+          "certTypeDescr": "مميز برسم",
+          "certTypeCount": 22
+        }
+      ]
+    }
+  ]
+}
