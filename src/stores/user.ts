@@ -1,6 +1,6 @@
 import { create } from 'zustand'
 import { persist, createJSONStorage } from 'zustand/middleware'
-import { LoginResponse } from '@/types/types.ts'
+import { LoginResponse } from '@/types/auth.types.ts'
 
 type UseUserStoreType = {
   user: LoginResponse | null

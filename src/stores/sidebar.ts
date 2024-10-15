@@ -1,6 +1,6 @@
 import { create } from 'zustand'
 import { persist, createJSONStorage } from 'zustand/middleware'
-import { SidebarItem } from '@/types/types.ts'
+import { SidebarItem } from '@/types/auth.types.ts'
 
 type useSidebarStoreType = {
   isOpen: boolean

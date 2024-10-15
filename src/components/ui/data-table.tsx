@@ -18,9 +18,10 @@ interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[]
   data: TData[]
   subRowsField?: string
+  expandableRowCLassName?: string
 }
 
-export function DataTable<TData, TValue>({ columns, data, subRowsField = 'children' }: DataTableProps<TData, TValue>) {
+export function DataTable<TData, TValue>({ columns, data, subRowsField = 'children', expandableRowCLassName }: DataTableProps<TData, TValue>) {
   const [sorting, setSorting] = useState<SortingState>([])
   const table = useReactTable({
     data,
@@ -53,6 +54,7 @@ export function DataTable<TData, TValue>({ columns, data, subRowsField = 'childr
                     <TableHead
                       key={header.id}
                       colSpan={header.colSpan}
+                      //@ts-ignore Ignore next line errors as last and first do exist in meta
                       className={`${header.column.columnDef.meta?.last ? 'rounded-tl-md' : header.column.columnDef.meta?.first ? 'rounded-tr-md' : ''}`}
                     >
                       {header.isPlaceholder ? null : flexRender(header.column.columnDef.header, header.getContext())}
@@ -66,7 +68,7 @@ export function DataTable<TData, TValue>({ columns, data, subRowsField = 'childr
             {table.getRowModel().rows?.length ? (
               table.getRowModel().rows.map((row) => (
                 <TableRow
-                  className={row.getCanExpand() ? 'bg-blue-50' : ''}
+                  className={row.getCanExpand() ? expandableRowCLassName : ''}
                   key={row.id}
                   data-state={row.getIsSelected() && 'selected'}
                 >
@@ -79,6 +81,7 @@ export function DataTable<TData, TValue>({ columns, data, subRowsField = 'childr
               ))
             ) : (
               <TableRow>
+                {/* + 10 is just an arbitrary number fo handle the fact columns.length is less than the actual column count*/}
                 <TableCell colSpan={columns.length + 10} className='h-24 w-full text-center'>
                   لا توجد نتائج.
                 </TableCell>

@@ -1,6 +1,6 @@
 import Axios, { type InternalAxiosRequestConfig } from 'axios'
 
-const API_URL = 'http://localhost:8080/' // Development API URL
+const API_URL = 'http://10.10.60.153:8081/' // Development API URL
 
 function authRequestInterceptor(config: InternalAxiosRequestConfig): InternalAxiosRequestConfig {
   const token = localStorage.getItem('token')
@@ -16,7 +16,7 @@ export const axiosInstance = Axios.create({
   baseURL: API_URL,
 })
 
-axiosInstance.defaults.timeout = 10000 // Application wide request timeout
+axiosInstance.defaults.timeout = 60000 // Application wide request timeout
 axiosInstance.interceptors.request.use(authRequestInterceptor) // Intercept all request and attach authorization heaader
 axiosInstance.interceptors.response.use(
   (response) => {

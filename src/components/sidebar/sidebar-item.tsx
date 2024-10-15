@@ -2,7 +2,7 @@ import { cn } from '@/lib/utils.ts'
 import { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider } from '@/components/ui/tooltip'
 import { Button } from '@/components/ui/button.tsx'
 import { Link } from 'react-router-dom'
-import { type SidebarItem } from '@/types/types.ts'
+import { type SidebarItem } from '@/types/auth.types.ts'
 
 type props = {
   isOpen: boolean

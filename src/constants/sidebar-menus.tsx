@@ -1,4 +1,4 @@
-import { SidebarItem } from '@/types/types.ts'
+import { SidebarItem } from '@/types/auth.types.ts'
 import {
   IdCard,
   Presentation,

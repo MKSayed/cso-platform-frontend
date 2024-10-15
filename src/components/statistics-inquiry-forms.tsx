@@ -10,10 +10,11 @@ import excelIcon from '@/assets/excel.svg'
 import pdfIcon from '@/assets/pdf.svg'
 import { Button } from '@/components/ui/button.tsx'
 import MultipleSelector from '@/components/multi-select.tsx'
-import { GovCertType } from '@/types/types.ts'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
-import { act } from 'react-dom/test-utils'
 import { useEffect } from 'react'
+import { useFetchBirthGovStats, useFetchBirthRegCenStats } from '@/api/api.ts';
+import { format } from 'date-fns'
+import { GovList, RegCenList } from '@/types/statistics.types.ts';
 
 const multiSelectOptionSchema = z.object({
   label: z.string(),
@@ -24,7 +25,7 @@ const multiSelectOptionSchema = z.object({
 
 type props = {
   activeTab: string
-  setTableData: (v: GovCertType[]) => void
+  setTableData: (v: GovList[] | RegCenList[]) => void
   variant: string
   setVariant: (v: string) => void
 }
@@ -34,7 +35,7 @@ export function StatisticsInquiryForms({ activeTab, setTableData, variant, setVa
   const statisticsInquiryFormSchema = z.object({
     startDate: z.date({ required_error: 'يجب ادخال بداية فترة البحث' }),
     endDate: z.date({ required_error: 'يجب ادخال نهاية فترة البحث' }),
-    governorate: z
+    governorates: z
       .array(multiSelectOptionSchema)
       .min(1, 'يجب اختيار محافظة واحدة على الاقل')
       .refine((value) => {
@@ -42,7 +43,7 @@ export function StatisticsInquiryForms({ activeTab, setTableData, variant, setVa
         // if more than 1 governorate selected and tab is not governorate return false
         return value.length < 2
       }, 'يجب اختيار محافظة واحدة على الاكثر'),
-    worksite: z
+    workSites: z
       .array(multiSelectOptionSchema)
       .min(1)
       .refine((value) => {
@@ -51,30 +52,65 @@ export function StatisticsInquiryForms({ activeTab, setTableData, variant, setVa
         return value.length < 2
       }, 'يجب اختيار موقع عمل واحد على الاكثر'),
   })
+
+  // API call mutations
+  const { mutateAsync: fetchBirthGovStats } = useFetchBirthGovStats()
+  const { mutateAsync: fetchBirthRegCenStats } = useFetchBirthRegCenStats()
+
   // Define form
   const statisticsInquiryForm = useForm<z.infer<typeof statisticsInquiryFormSchema>>({
     resolver: zodResolver(statisticsInquiryFormSchema),
     defaultValues: {
       startDate: undefined,
       endDate: undefined,
-      governorate: [{ label: 'الكل', value: 'all', fixed: true }],
-      worksite: [{ label: 'الكل', value: 'all', fixed: true }],
+      governorates: [{ label: 'الكل', value: 'all', fixed: true }],
+      workSites: [{ label: 'الكل', value: 'all', fixed: true }],
     },
   })
 
   useEffect(() => {
     if (activeTab === 'governorate') {
-      statisticsInquiryForm.setValue('governorate', [{ label: 'الكل', value: 'all', fixed: true }])
-    } else statisticsInquiryForm.setValue('governorate', [])
+      statisticsInquiryForm.setValue('governorates', [{ label: 'الكل', value: 'all', fixed: true }])
+    } else statisticsInquiryForm.setValue('governorates', [])
 
     // set worksite default value to empty array in employee tab. but set it to all object in other tabs
     if (activeTab === 'employee') {
-      statisticsInquiryForm.setValue('worksite', [])
-    } else statisticsInquiryForm.setValue('worksite', [{ label: 'الكل', value: 'all', fixed: true }])
+      statisticsInquiryForm.setValue('workSites', [])
+    } else statisticsInquiryForm.setValue('workSites', [{ label: 'الكل', value: 'all', fixed: true }])
   }, [activeTab])
-  // Define form submit handlers
-  function onStatisticsInquiryForm(formData: z.infer<typeof statisticsInquiryFormSchema>) {
-    console.log(formData)
+
+  // Define form submit handler
+  async function onStatisticsInquiryForm(formData: z.infer<typeof statisticsInquiryFormSchema>) {
+    console.log('Searching...')
+    if (activeTab === 'governorate') {
+      switch (variant) {
+        // governorate tab with birth variant
+        case 'birth':
+          const data = await fetchBirthGovStats({
+            startDate: format(formData.startDate, 'yyyy-MM-dd'),
+            endDate: format(formData.endDate, 'yyyy-MM-dd'),
+          })
+          setTableData(data.govList)
+          break
+      }
+    } else if (activeTab === 'workSite' ) {
+      switch (variant) {
+        // workSite tab with birth variant
+        case 'birth':
+          const data = await fetchBirthRegCenStats({
+            govCode: formData.governorates[0].value,
+            startDate: format(formData.startDate, 'yyyy-MM-dd'),
+            endDate: format(formData.endDate, 'yyyy-MM-dd'),
+          })
+
+          // if user had all selected
+          if (formData.workSites.length === 1) {
+            setTableData(data.regCenList)
+          }
+          break
+      }
+
+    }
   }
 
   return (
@@ -89,20 +125,20 @@ export function StatisticsInquiryForms({ activeTab, setTableData, variant, setVa
         <div className={'flex flex-col gap-1 text-right'} dir={'ltr'}>
           {/*Document type field (doesn't go inside useForm)*/}
           <FormLabel className={'mb-1 mt-2 text-foreground'}>نوع المصدر</FormLabel>
-          <Select>
+          <Select value={variant} onValueChange={(value: string) => setVariant(value)}>
             <SelectTrigger className={'text-foreground'}>
               <SelectValue placeholder='نوع المصدر' />
             </SelectTrigger>
-            <SelectContent className='text-foreground'>
-              <SelectItem value='شهادات ميلاد'>شهادات ميلاد</SelectItem>
-              <SelectItem value='شهادات وفاة'>شهادات وفاة</SelectItem>
-              <SelectItem value='شهادات زواج'>شهادات زواج</SelectItem>
-              <SelectItem value='شهادات طلاق'>شهادات طلاق</SelectItem>
-              <SelectItem value='قيد عائلي'>قيد عائلي</SelectItem>
-              <SelectItem value='قيد فردي'>قيد فردي</SelectItem>
-              <SelectItem value='تعذر'>تعذر</SelectItem>
-              <SelectItem value='بطاقات مصدرة'>بطاقات مصدرة</SelectItem>
-              <SelectItem value='استمارات'>استمارات</SelectItem>
+            <SelectContent  className='text-foreground'>
+              <SelectItem value='birth'>شهادات ميلاد</SelectItem>
+              <SelectItem value='death'>شهادات وفاة</SelectItem>
+              <SelectItem value='marriage'>شهادات زواج</SelectItem>
+              <SelectItem value='divorce'>شهادات طلاق</SelectItem>
+              <SelectItem value='familyTree'>قيد عائلي</SelectItem>
+              <SelectItem value='singleTree'>قيد فردي</SelectItem>
+              <SelectItem value='errorTree'>تعذر</SelectItem>
+              <SelectItem value='cards'>بطاقات مصدرة</SelectItem>
+              <SelectItem value='forms'>استمارات</SelectItem>
             </SelectContent>
           </Select>
 
@@ -124,7 +160,7 @@ export function StatisticsInquiryForms({ activeTab, setTableData, variant, setVa
           />
           <FormField
             control={statisticsInquiryForm.control}
-            name='governorate'
+            name='governorates'
             render={({ field }) => (
               <FormItem>
                 <FormLabel className={'text-foreground'}>المحافطة</FormLabel>
@@ -138,6 +174,7 @@ export function StatisticsInquiryForms({ activeTab, setTableData, variant, setVa
                         field.onChange([{ label: 'الكل', value: 'all', fixed: true }])
                       } else if (activeTab === 'governorate')
                         field.onChange(selectedOptions.filter((item) => item.value !== 'all'))
+                      else field.onChange(selectedOptions)
                     }}
                     defaultOptions={[
                       { label: 'القاهرة', value: '1' },
@@ -161,7 +198,7 @@ export function StatisticsInquiryForms({ activeTab, setTableData, variant, setVa
           {activeTab !== 'governorate' && (
             <FormField
               control={statisticsInquiryForm.control}
-              name='worksite'
+              name='workSites'
               render={({ field }) => (
                 <FormItem>
                   <FormLabel className={'text-foreground'}>مواقع العمل</FormLabel>
@@ -175,6 +212,7 @@ export function StatisticsInquiryForms({ activeTab, setTableData, variant, setVa
                           field.onChange([{ label: 'الكل', value: 'all', fixed: true }])
                         } else if (activeTab === 'workSite')
                           field.onChange(selectedOptions.filter((item) => item.value !== 'all'))
+                        else field.onChange(selectedOptions)
                       }}
                       selectFirstItem={true}
                       defaultOptions={[

@@ -16,6 +16,7 @@ interface DataTableColumnHeaderProps<TData, TValue> extends React.HTMLAttributes
   title: string
   titleClassName?: string
   buttonClassname?: string
+  iconColor?: string
 }
 
 export function DataTableColumnHeader<TData, TValue>({
@@ -24,6 +25,7 @@ export function DataTableColumnHeader<TData, TValue>({
   className,
   titleClassName,
   buttonClassname,
+  iconColor = '#FFC000',
 }: DataTableColumnHeaderProps<TData, TValue>) {
   if (!column.getCanSort()) {
     return <div className={cn(className)}>{title}</div>
@@ -40,11 +42,11 @@ export function DataTableColumnHeader<TData, TValue>({
           >
             <span className={cn('text-white', titleClassName)}>{title}</span>
             {column.getIsSorted() === 'desc' ? (
-              <ArrowDownIcon color={'#FFC000'} className='ml-r h-4 w-4' />
+              <ArrowDownIcon color={iconColor} className='ml-r h-4 w-4' />
             ) : column.getIsSorted() === 'asc' ? (
-              <ArrowUpIcon color={'#FFC000'} className='ml-r h-4 w-4' />
+              <ArrowUpIcon color={iconColor} className='ml-r h-4 w-4' />
             ) : (
-              <CaretSortIcon color={'#FFC000'} className='ml-r h-4 w-4' />
+              <CaretSortIcon color={iconColor} className='ml-r h-4 w-4' />
             )}
           </Button>
         </DropdownMenuTrigger>

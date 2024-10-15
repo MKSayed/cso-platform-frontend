@@ -16,14 +16,14 @@ import { DataTable } from '@/components/ui/data-table.tsx'
 import { Tabs, TabsList } from '@/components/ui/tabs.tsx'
 import { StyledTabTrigger } from '@/components/styled-tap-trigger.tsx'
 import { useEffect, useState } from 'react'
-import { columns as birthGovernorateColumns } from './birth-governorate-tab-table-columns.tsx'
-import { GovCertType } from '@/types/types.ts'
-import data from '@/constants/birth-gov-stats-in-period.json'
+import { birthGovernorateTabColumns, birthWorkSiteTabColumns } from './birth-statistics-table-columns.tsx'
+import { GovList, RegCenList } from '@/types/statistics.types.ts'
+import { ColumnDef } from '@tanstack/react-table'
 
 export default function Statistics() {
-  const [activeTab, setActiveTab] = useState<string>('governorate')
-  const [tableData, setTableData] = useState<GovCertType[]>([])
-  const [variant, setVariant] = useState<string>('') // State linked with document type field of the statistics inquiry forms
+  const [activeTab, setActiveTab] = useState<'governorate' | 'workSite' | 'employee' | string>('governorate')
+  const [tableData, setTableData] = useState<GovList[] | RegCenList[]>([])
+  const [variant, setVariant] = useState<string>('birth') // State linked with document type field of the statistics inquiry forms
 
   const { loadSidebarMenu } = useSidebarMenuLoader()
   useEffect(() => {
@@ -31,7 +31,22 @@ export default function Statistics() {
     loadSidebarMenu({ menuKey: 'main' })
   }, [])
 
-  // const columns = activeTab ?
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  let columns: ColumnDef<any>[] = birthGovernorateTabColumns // initial columns
+  // set columns const
+  if (activeTab === 'governorate') {
+    switch (variant) {
+      case 'birth':
+        columns = birthGovernorateTabColumns
+        break
+    }
+  } else if (activeTab === 'workSite') {
+    switch (variant) {
+      case 'birth':
+        columns = birthWorkSiteTabColumns
+        break
+    }
+  }
 
   return (
     <ContentLayout navbarTitle={'مرحباً... احمد شاهر'}>
@@ -81,9 +96,10 @@ export default function Statistics() {
             </div>
             <div className={'w-full overflow-x-hidden'}>
               <DataTable
-                columns={birthGovernorateColumns}
+                columns={columns}
                 // Dummy data for UI testing purpose
-                data={data.govCertType}
+                data={tableData}
+                expandableRowCLassName={'bg-[#323A5F] hover:bg-[#323A5F]'}
               />
             </div>
           </div>
