@@ -9,7 +9,6 @@ export type BirthCertRegCentersRequest = {
   endDate: string
 }
 
-
 export type BirthCertGovernoratesResponse = {
   startDate: string
   endDate: string
@@ -44,7 +43,6 @@ type BirthCert = {
   firstCancelled: CertData
   normalSpecial: CertData
   firstSpecial: CertData
-
 }
 
 type CertData = {
@@ -54,7 +52,7 @@ type CertData = {
 }
 
 // Omit multiple attributes (`govCertType` and `govList`)
-export type BirthCertRegionalCentersResponse = Omit<BirthCertGovernoratesResponse, 'govCertType' | "govList"> & {
+export type BirthCertRegionalCentersResponse = Omit<BirthCertGovernoratesResponse, 'govCertType' | 'govList'> & {
   govCode: string
   govDescr: string
   regCenList: RegCenList[]

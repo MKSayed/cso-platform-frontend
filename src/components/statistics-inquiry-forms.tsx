@@ -11,10 +11,10 @@ import pdfIcon from '@/assets/pdf.svg'
 import { Button } from '@/components/ui/button.tsx'
 import MultipleSelector from '@/components/multi-select.tsx'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useFetchBirthGovStats, useFetchBirthRegCenStats } from '@/api/api.ts';
 import { format } from 'date-fns'
-import { GovList, RegCenList } from '@/types/statistics.types.ts';
+import { GovList, RegCenList } from '@/types/statistics.types.ts'
 
 const multiSelectOptionSchema = z.object({
   label: z.string(),
@@ -30,7 +30,16 @@ type props = {
   setVariant: (v: string) => void
 }
 
+// Start of the functional component
 export function StatisticsInquiryForms({ activeTab, setTableData, variant, setVariant }: props) {
+  const [error, setError] = useState<string>('')
+  const [isPending, setIsPending] = useState<boolean>(false)
+  function handleError(err: string) {
+    setError(err)
+    // Empty error state after period of time
+    setTimeout(() => setError(''), 4000)
+  }
+
   // Define form schema
   const statisticsInquiryFormSchema = z.object({
     startDate: z.date({ required_error: 'يجب ادخال بداية فترة البحث' }),
@@ -81,36 +90,44 @@ export function StatisticsInquiryForms({ activeTab, setTableData, variant, setVa
 
   // Define form submit handler
   async function onStatisticsInquiryForm(formData: z.infer<typeof statisticsInquiryFormSchema>) {
-    console.log('Searching...')
+    setIsPending(true)
     if (activeTab === 'governorate') {
       switch (variant) {
         // governorate tab with birth variant
         case 'birth':
-          const data = await fetchBirthGovStats({
-            startDate: format(formData.startDate, 'yyyy-MM-dd'),
-            endDate: format(formData.endDate, 'yyyy-MM-dd'),
-          })
-          setTableData(data.govList)
-          break
-      }
-    } else if (activeTab === 'workSite' ) {
-      switch (variant) {
-        // workSite tab with birth variant
-        case 'birth':
-          const data = await fetchBirthRegCenStats({
-            govCode: formData.governorates[0].value,
-            startDate: format(formData.startDate, 'yyyy-MM-dd'),
-            endDate: format(formData.endDate, 'yyyy-MM-dd'),
-          })
-
-          // if user had all selected
-          if (formData.workSites.length === 1) {
-            setTableData(data.regCenList)
+          try {
+            const data = await fetchBirthGovStats({
+              startDate: format(formData.startDate, 'yyyy-MM-dd'),
+              endDate: format(formData.endDate, 'yyyy-MM-dd'),
+            })
+            setTableData(data.govList)
+          } catch (err: any) {
+            handleError(err.message)
           }
           break
       }
-
+    } else if (activeTab === 'workSite') {
+      switch (variant) {
+        // workSite tab with birth variant
+        case 'birth':
+          try {
+            const data = await fetchBirthRegCenStats({
+              // will always be governorates index 0 because only 1 governorate only allowed while in workSite tab
+              govCode: formData.governorates[0].value,
+              startDate: format(formData.startDate, 'yyyy-MM-dd'),
+              endDate: format(formData.endDate, 'yyyy-MM-dd'),
+            })
+            // if user had all selected
+          if (formData.workSites.length === 1) {
+            setTableData(data.regCenList)
+          }
+          } catch (err: any) {
+            handleError(err.message)
+          }
+          break
+      }
     }
+    setIsPending(false)
   }
 
   return (
@@ -129,7 +146,7 @@ export function StatisticsInquiryForms({ activeTab, setTableData, variant, setVa
             <SelectTrigger className={'text-foreground'}>
               <SelectValue placeholder='نوع المصدر' />
             </SelectTrigger>
-            <SelectContent  className='text-foreground'>
+            <SelectContent className='text-foreground'>
               <SelectItem value='birth'>شهادات ميلاد</SelectItem>
               <SelectItem value='death'>شهادات وفاة</SelectItem>
               <SelectItem value='marriage'>شهادات زواج</SelectItem>
@@ -236,7 +253,10 @@ export function StatisticsInquiryForms({ activeTab, setTableData, variant, setVa
         </div>
         {/*End of form fields*/}
 
-        <LoadingButton className={'bg-[#0B0367] text-sm font-normal'}>بحث</LoadingButton>
+        <LoadingButton loading={isPending} className={'bg-[#0B0367] text-sm font-normal'}>
+          بحث
+        </LoadingButton>
+        {error && <p className={'w-full text-center text-sm text-red-600'}> {error} </p>}
 
         {/*Export document*/}
         <div className='flex flex-col gap-2'>

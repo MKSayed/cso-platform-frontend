@@ -1,7 +1,7 @@
 import { ColumnDef } from '@tanstack/react-table'
-import { GovList, RegCenList } from '@/types/statistics.types.ts';
+import { GovList, RegCenList } from '@/types/statistics.types.ts'
 import { DataTableColumnHeader } from '@/components/ui/data-table-column-header.tsx'
-import { ChevronsUpDown } from 'lucide-react';
+import { ChevronsUpDown } from 'lucide-react'
 
 export const birthGovernorateTabColumns: ColumnDef<GovList>[] = [
   {
@@ -193,8 +193,10 @@ export const birthWorkSiteTabColumns: ColumnDef<RegCenList>[] = [
             buttonClassname={'hover:bg-[#fff3fb] mr-0 data-[state=open]:bg-[#fff3fb] w-full px-0'}
           />
         ),
- cell: ({ getValue, row }) =>
-          (row.getCanExpand() ? null : <div className={'-my-2 bg-[#F1F0FF] p-2 text-center'}> {getValue() as number}</div>)
+        cell: ({ getValue, row }) =>
+          row.getCanExpand() ? null : (
+            <div className={'-my-2 bg-[#F1F0FF] p-2 text-center'}> {getValue() as number}</div>
+          ),
       },
     ],
   },
@@ -207,7 +209,6 @@ export const birthWorkSiteTabColumns: ColumnDef<RegCenList>[] = [
     columns: [
       {
         accessorKey: 'birthCertType.firstPrinted.count',
-
 
         header: ({ column }) => <DataTableColumnHeader column={column} title='مصدر' />,
       },
@@ -242,8 +243,10 @@ export const birthWorkSiteTabColumns: ColumnDef<RegCenList>[] = [
             buttonClassname={'hover:bg-[#fff3fb] mr-0 data-[state=open]:bg-[#fff3fb] w-full px-0'}
           />
         ),
-cell: ({ getValue, row }) =>
-          (row.getCanExpand() ? null : <div className={'-my-2 bg-[#F1F0FF] p-2 text-center'}> {getValue() as number}</div>)
+        cell: ({ getValue, row }) =>
+          row.getCanExpand() ? null : (
+            <div className={'-my-2 bg-[#F1F0FF] p-2 text-center'}> {getValue() as number}</div>
+          ),
       },
     ],
   },
@@ -256,7 +259,16 @@ cell: ({ getValue, row }) =>
         title='الإجمالي'
       />
     ),
-    cell: ({ getValue, row }) => <div className={`text-center ${row.getCanExpand() && 'flex justify-end'} `}> {row.getCanExpand() ? <ChevronsUpDown className={'cursor-pointer'} onClick={row.getToggleExpandedHandler()}/> : getValue() as number} </div>,
+    cell: ({ getValue, row }) => (
+      <div className={`text-center ${row.getCanExpand() && 'flex justify-end'} `}>
+        {' '}
+        {row.getCanExpand() ? (
+          <ChevronsUpDown className={'cursor-pointer'} onClick={row.getToggleExpandedHandler()} />
+        ) : (
+          (getValue() as number)
+        )}{' '}
+      </div>
+    ),
     meta: { last: true },
   },
 ]

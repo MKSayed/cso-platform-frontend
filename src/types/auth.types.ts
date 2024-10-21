@@ -8,5 +8,3 @@ export type LoginResponse = {
   roles: string[]
   userName: string
 }
-
-

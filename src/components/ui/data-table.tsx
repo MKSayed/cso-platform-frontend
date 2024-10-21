@@ -21,7 +21,12 @@ interface DataTableProps<TData, TValue> {
   expandableRowCLassName?: string
 }
 
-export function DataTable<TData, TValue>({ columns, data, subRowsField = 'children', expandableRowCLassName }: DataTableProps<TData, TValue>) {
+export function DataTable<TData, TValue>({
+  columns,
+  data,
+  subRowsField = 'children',
+  expandableRowCLassName,
+}: DataTableProps<TData, TValue>) {
   const [sorting, setSorting] = useState<SortingState>([])
   const table = useReactTable({
     data,
