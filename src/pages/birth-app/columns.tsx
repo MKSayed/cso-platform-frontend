@@ -1,5 +1,5 @@
 import { ColumnDef } from '@tanstack/react-table'
-import { type BirthData } from '@/types/auth.types.ts'
+import { type BirthData } from '@/types/inquiry.types.ts'
 import { DataTableColumnHeader } from '@/components/ui/data-table-column-header.tsx'
 import { Crosshair, Settings2 } from 'lucide-react'
 import { Link } from 'react-router-dom'

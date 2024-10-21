@@ -4,7 +4,7 @@ import Layout from '@/containers/layout.tsx'
 import Home from '@/pages/home.tsx'
 import CsoApps from '@/pages/cso-apps.tsx'
 import BirthApp from '@/pages/birth-app/page.tsx'
-import PersonFullDetails from '@/pages/person-full-details.tsx'
+import Page from '@/pages/person-full-details/page.tsx'
 import Statistics from '@/pages/statistics/page.tsx'
 import { ProtectedRoute } from '@/components/protected-route.tsx'
 
@@ -47,7 +47,7 @@ export const browserRouter = createBrowserRouter([
             element: (
               <ProtectedRoute>
                 {' '}
-                <PersonFullDetails />{' '}
+                <Page />{' '}
               </ProtectedRoute>
             ),
           },

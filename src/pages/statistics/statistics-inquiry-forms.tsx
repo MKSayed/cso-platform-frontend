@@ -10,7 +10,7 @@ import excelIcon from '@/assets/excel.svg'
 import pdfIcon from '@/assets/pdf.svg'
 import { Button } from '@/components/ui/button.tsx'
 import MultipleSelector from '@/components/multi-select.tsx'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select.tsx'
 import { useEffect, useState } from 'react'
 import { useFetchBirthGovStats, useFetchBirthRegCenStats } from '@/api/statistics.api.ts';
 import { format } from 'date-fns'
