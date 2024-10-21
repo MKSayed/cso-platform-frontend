@@ -2,7 +2,7 @@ import '@/App.css'
 import { QueryClientProvider } from '@tanstack/react-query'
 import { RouterProvider } from 'react-router-dom'
 import browserRouter from '@/arabic-routes.tsx'
-import { queryClient } from '@/api/api.ts'
+import { queryClient } from '@/api/deps.api.ts'
 
 export default function App() {
   return (

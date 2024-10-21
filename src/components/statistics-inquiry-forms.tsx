@@ -12,7 +12,7 @@ import { Button } from '@/components/ui/button.tsx'
 import MultipleSelector from '@/components/multi-select.tsx'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { useEffect, useState } from 'react'
-import { useFetchBirthGovStats, useFetchBirthRegCenStats } from '@/api/api.ts';
+import { useFetchBirthGovStats, useFetchBirthRegCenStats } from '@/api/statistics.api.ts';
 import { format } from 'date-fns'
 import { GovList, RegCenList } from '@/types/statistics.types.ts'
 
@@ -194,7 +194,7 @@ export function StatisticsInquiryForms({ activeTab, setTableData, variant, setVa
                       else field.onChange(selectedOptions)
                     }}
                     defaultOptions={[
-                      { label: 'القاهرة', value: '1' },
+                      { label: 'القاهرة', value: '19' },
                       { label: 'الجيزة', value: '2' },
                       { label: 'اسكندرية', value: '3' },
                       { label: 'المنوفية', value: '4' },

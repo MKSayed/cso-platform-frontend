@@ -9,7 +9,7 @@ export const birthGovernorateTabColumns: ColumnDef<GovList>[] = [
     header: ({ column }) => (
       <DataTableColumnHeader
         column={column}
-        title='cمحافظة'
+        title='محافظة'
         className={'-pl-0 -mr-2 flex -translate-y-2/3 justify-start bg-[#0B0367] pr-2'}
       />
     ),

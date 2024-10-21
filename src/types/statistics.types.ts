@@ -57,3 +57,5 @@ export type BirthCertRegionalCentersResponse = Omit<BirthCertGovernoratesRespons
   govDescr: string
   regCenList: RegCenList[]
 }
+
+
