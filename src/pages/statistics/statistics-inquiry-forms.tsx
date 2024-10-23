@@ -12,7 +12,7 @@ import { Button } from '@/components/ui/button.tsx'
 import MultipleSelector from '@/components/multi-select.tsx'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select.tsx'
 import { useEffect, useState } from 'react'
-import { useFetchBirthGovStats, useFetchBirthRegCenStats } from '@/api/statistics.api.ts';
+import { useFetchBirthGovStats, useFetchBirthRegCenStats } from '@/api/statistics.api.ts'
 import { format } from 'date-fns'
 import { GovList, RegCenList } from '@/types/statistics.types.ts'
 
@@ -118,9 +118,9 @@ export function StatisticsInquiryForms({ activeTab, setTableData, variant, setVa
               endDate: format(formData.endDate, 'yyyy-MM-dd'),
             })
             // if user had all selected
-          if (formData.workSites.length === 1) {
-            setTableData(data.regCenList)
-          }
+            if (formData.workSites.length === 1) {
+              setTableData(data.regCenList)
+            }
           } catch (err: any) {
             handleError(err.message)
           }

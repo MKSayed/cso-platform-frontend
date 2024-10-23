@@ -6,8 +6,7 @@ import {
 } from '@/types/statistics.types.ts'
 import { useMutation } from '@tanstack/react-query'
 import { axiosInstance } from '@/api/axios'
-import { CustomAxiosError, handleError } from '@/api/deps.api.ts';
-
+import { CustomAxiosError, handleError } from '@/api/deps.api.ts'
 
 export function useFetchBirthGovStats() {
   return useMutation({

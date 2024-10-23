@@ -2,8 +2,7 @@ import { useMutation } from '@tanstack/react-query'
 import { type loginFormData } from '@/pages/login-page/login-page.tsx'
 import axios from 'axios'
 import { LoginResponse } from '@/types/auth.types.ts'
-import { CustomAxiosError, handleError } from '@/api/deps.api.ts';
-
+import { CustomAxiosError, handleError } from '@/api/deps.api.ts'
 
 export function useLogin() {
   return useMutation({
